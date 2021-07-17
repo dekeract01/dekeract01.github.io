@@ -57,10 +57,10 @@ $black                      : #000000;
 
 $body-color                 : #fff;
 $background-color           : #fff;
-$code-background-color      : #fafafa;
+$code-background-color      : $liver-blue; /* #fafafa*/
 $code-background-color-dark : $liver-blue;
 $text-color                 : $black;
-$border-color               : $liver-blue;
+$border-color               : $lighter-gray;
 
 $primary-color              : #7a8288;
 $success-color              : #62c462;
