@@ -267,7 +267,7 @@
 
       &:hover {
         color: $masthead-link-color-hover;
-        background: mix(#fff, $primary-color, 75%);
+        background: $masthead-link-color-hover /* mix(#fff, $primary-color, 75%)*/;
       }
     }
 
@@ -327,7 +327,7 @@
 
     &:hover {
       text-decoration: underline;
-      text-decoration-color: $liver-blue;
+      color: $liver-blue;
     }
   }
 
