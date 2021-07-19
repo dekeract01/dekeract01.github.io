@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+<a href="myFile.js" download>Click to Download</a>
+
 Education
 ======
 * M.Eng University of Liverpool
