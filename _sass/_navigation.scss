@@ -327,7 +327,6 @@
 
     &:hover {
       text-decoration: underline;
-      color: $liver-blue;
     }
   }
 
@@ -341,7 +340,7 @@
     border-radius: $border-radius;
 
     &:hover {
-      color: #fff;
+      color: $liver-blue;;
     }
   }
 }
@@ -406,8 +405,8 @@
     border-bottom: 1px solid $border-color;
 
     &:hover {
-      color: #000;
-      background: $lighter-gray;
+      color: $liver-blue; // #000;
+      background: $liver-blue;
     }
   }
 
