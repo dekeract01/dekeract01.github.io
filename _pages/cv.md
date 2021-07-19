@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<a href="myFile.js" download>Click to Download</a>
+<a href="files/TA-CV-webpage.pdf" download>Click to Download</a>
 
 Education
 ======
