@@ -55,6 +55,7 @@ $lighter-gray               : mix(#fff, $gray, 90%);
 $liver-blue                 : #02105f;
 $black                      : #000000;
 $white                      : #fff;
+$contrast-red               : #c29a9a;
 
 $body-color                 : #fff;
 $background-color           : #fff;
@@ -63,7 +64,7 @@ $code-background-color-dark : $liver-blue;
 $text-color                 : $black;
 $border-color               : $lighter-gray;
 
-$primary-color              : $black;
+$primary-color              : $contrast-red;
 $success-color              : #62c462;
 $warning-color              : #f89406;
 $danger-color               : #ee5f5b;
