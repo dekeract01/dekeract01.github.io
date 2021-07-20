@@ -54,6 +54,7 @@ $light-gray                 : mix(#fff, $gray, 50%);
 $lighter-gray               : mix(#fff, $gray, 90%);
 $liver-blue                 : #02105f;
 $black                      : #000000;
+$white                      : #fff;
 
 $body-color                 : #fff;
 $background-color           : #fff;
@@ -161,7 +162,7 @@ Footer settings
 .page__footer {
    color: #fff !important; // override
  }
- 
+
  .page__footer-follow .social-icons i,
 .page__footer-follow .social-icons .svg-inline--fa  {
   color: inherit;
