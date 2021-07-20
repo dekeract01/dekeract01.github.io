@@ -1,11 +1,11 @@
 ---
 permalink: /
 title: "Research Interests"
-excerpt: "About me"
+excerpt: "Research"
 author_profile: true
 redirect_from: 
   - /research/
   - /research.html
 ---
 
-Website under maintainance.
+Need to include research interests.
