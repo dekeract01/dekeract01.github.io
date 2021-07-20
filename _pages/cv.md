@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<a href="http://academicpages.github.io/files/TA-CV-webpage.pdf" download>Click to Download</a>
+<a href="https://dekeract01.github.io/files/TA-CV-webpage.pdf" download>Click to Download</a>
 
 Education
 ======

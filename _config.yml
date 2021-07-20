@@ -85,7 +85,7 @@ author:
   avatar           : "profile.png"
   bio              : "Graduate Teaching/Research Assistant at the University of Liverpool"
   pronoun          : "He/Him"
-  location         : "Liverpool, UK"
+  location         : #"Liverpool, UK"
   employer         : "University of Liverpool"
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
