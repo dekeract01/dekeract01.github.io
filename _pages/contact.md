@@ -5,6 +5,7 @@ author_profile: true
 redirect_from: 
   # - /contact/
 ---
+======
 
 Email
 
@@ -12,5 +13,6 @@ Email
   * academic : tejatala [at] liverpool [dot] ac [dot]
   
 ======
+
 PGP Key
 ------
