@@ -9,10 +9,13 @@ redirect_from:
 
 Email
 
+------
+
   * primary  : dekeract01 [at]  gmail [dot] com
   * academic : tejatala [at] liverpool [dot] ac [dot]
   
 ======
 
 PGP Key
+
 ------
