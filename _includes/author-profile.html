@@ -22,6 +22,9 @@
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse">Follow</button>
     <ul class="author__urls social-icons">
+      {% if author.pronoun %}
+        <li><i class="fa fa-fw fa-map-users" aria-hidden="true"></i> {{ author.pronoun }}</li>
+      {% endif %}
       {% if author.location %}
         <li><i class="fa fa-fw fa-map-marker-alt" aria-hidden="true"></i> {{ author.location }}</li>
       {% endif %}
