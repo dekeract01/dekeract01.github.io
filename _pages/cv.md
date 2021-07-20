@@ -18,19 +18,10 @@ Education
 Work experience
 ======
 * October 2020 - Research Assistant
-  * 
-
 * October 2020 - Teaching Assistant
-  * 
-
 * August 2019 - MATLAB Ambassador
-  * 
-
 * July 2018 - Intern, Airbus Defence and Space
-  * 
-
 * June 2017: Research Assistant, Institute for Risk and Uncertainty
-  * 
   
 <!-- Skills
 ======
