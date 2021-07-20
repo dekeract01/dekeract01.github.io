@@ -7,15 +7,15 @@ redirect_from:
 ---
 ======
 
-Email
+## Email
 
 ------
 
   * primary  : dekeract01 [at]  gmail [dot] com
-  * academic : tejatala [at] liverpool [dot] ac [dot]
+  * academic : tejatala [at] liverpool [dot] ac [dot] uk
   
 ======
 
-PGP Key
+## PGP Key
 
 ------

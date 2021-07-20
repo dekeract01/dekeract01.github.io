@@ -7,4 +7,4 @@ redirect_from:
   - /research/
 ---
 
-Computational Fluids Dynamics
+Aerodynamics
