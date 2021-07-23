@@ -1,14 +1,14 @@
 ---
-title: "Teaching experience 2"
+title: "Teaching assistant"
 collection: teaching
-type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
-location: "City, Country"
+type: "Programming for Enginneers 2"
+permalink: /teaching/2020-matlab
+venue: "University of Liverpool, School of Engineering"
+date: 2021-02-08
+location: "Liverpool, UK"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+<!-- This is a description of a teaching experience. You can use markdown like any other post.
 
 Heading 1
 ======
@@ -17,4 +17,4 @@ Heading 2
 ======
 
 Heading 3
-======
+====== -->
