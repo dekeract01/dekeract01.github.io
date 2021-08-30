@@ -11,6 +11,9 @@ redirect_from:
 
 <a href="https://dekeract01.github.io/files/TA-CV-webpage.pdf" download>Click to Download</a>
 
+
+<a href="https://dekeract01.github.io/ta_webpage_3/site/site-html/deka-index.html" target="_blank">Click to New Page</a>
+
 Education
 ======
 * M.Eng University of Liverpool
