@@ -12,9 +12,9 @@ redirect_from:
 <a href="https://dekeract01.github.io/files/TA-CV-webpage.pdf" download>Click to Download</a>
 
 
-<a href="https://dekeract01.github.io/ta_webpage_3/site/site-html/deka-index.html" target="_blank">Click to New Page 3.0</a>
+<!-- <a href="https://dekeract01.github.io/ta_webpage_3/site/site-html/deka-index.html" target="_blank">Click to New Page 3.0</a>
 
-<a href="https://dekeract01.github.io/ta_webpage_5/site/deka5-index.html" target="_blank">Click to New Page 5.0</a>
+<a href="https://dekeract01.github.io/ta_webpage_5/site/deka5-index.html" target="_blank">Click to New Page 5.0</a> -->
 
 Education
 ======
