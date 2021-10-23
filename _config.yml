@@ -83,10 +83,10 @@ analytics:
 author:
   name             : "Teja Ala"
   avatar           : "profile.png"
-  bio              : "Graduate Teaching/Research Assistant at the University of Liverpool"
+  bio              : "PhD Researcher"
   pronoun          : "He/Him"
-  location         : #"Liverpool, UK"
-  employer         : "University of Liverpool"
+  location         : #"Southampton, UK"
+  employer         : "University of Southampton"
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
   email            : "dekeract01@gmail.com"
@@ -105,7 +105,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : "ganeshala/"
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0002-8337-6702"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
