@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD candidate at the Aeronautics and Astronautics department at the University of Southampton working under the supervision of Prof Neil Sandham. 
+I am a PhD candidate in the Aeronautics and Astronautics department at the University of Southampton working under the supervision of Prof Neil Sandham. 
 
 My research investigates physics-based models for laminar-turbulence transitions in high-enthalpy flows by using a combination of linear stability theory and direct numerical simulations by extending the current computational tools to include the effects of thermal and chemical non-equilibrium flow. 
 
