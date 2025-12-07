@@ -8,12 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD candidate in the Aeronautics and Astronautics department at the University of Southampton working under the supervision of Prof Neil Sandham. 
+I am a PhD candidate in Aeronautics and Astronautics at the University of Southampton, where I research laminar-turbulence transition in high-enthalpy hypersonic flows. My work combines Linear Stability Theory (LST) and Direct Numerical Simulation (DNS) to understand how thermal and chemical non-equilibrium affect boundary layer behaviour. I have extended the OpenSBLI finite-difference solver to model these effects, developing tools that reveal transition physics under realistic flight conditions. I have recently submitted my thesis.
 
-My research investigates physics-based models for laminar-turbulence transitions in high-enthalpy flows by using a combination of linear stability theory and direct numerical simulations by extending the current computational tools to include the effects of thermal and chemical non-equilibrium flow. 
-
-I graduated from the School of Engineering at the University of Liverpool in 2020 with a First-class integrated Masters degree in Mechanical Engineering (MEng). 
-
+I graduated from the School of Engineering at the University of Liverpool in 2020 with an integrated Masters degree in Mechanical Engineering (MEng), specialising in Numerical Methods.
 
 <!-- This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
 
