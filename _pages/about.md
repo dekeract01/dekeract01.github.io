@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD candidate in Aeronautics and Astronautics at the University of Southampton, where I research laminar-turbulence transition in high-enthalpy hypersonic flows. My work combines Linear Stability Theory (LST) and Direct Numerical Simulation (DNS) to understand how thermal and chemical non-equilibrium affect boundary layer behaviour. I have extended the OpenSBLI finite-difference solver to model these effects, developing tools that reveal transition physics under realistic flight conditions. I have recently submitted my thesis.
+I am a PhD candidate in Aeronautics and Astronautics at the University of Southampton, where I research laminar-turbulence transition in high-enthalpy hypersonic flows. My work combines Linear Stability Theory and Direct Numerical Simulation to understand how thermal non-equilibrium affect boundary layer behaviour. I have extended the OpenSBLI finite-difference solver to model these effects, developing tools that reveal transition physics under realistic flight conditions. I have recently submitted my thesis.
 
 I graduated from the School of Engineering at the University of Liverpool in 2020 with an integrated Masters degree in Mechanical Engineering (MEng), specialising in Numerical Methods.
 
