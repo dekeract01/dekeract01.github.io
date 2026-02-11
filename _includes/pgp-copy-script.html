@@ -6,17 +6,33 @@ function copyPGPKey() {
     return;
   }
   
-  const key = keyElement.textContent || keyElement.innerText;
+  // Get the text content more specifically
+  let key = keyElement.innerText || keyElement.textContent;
+  
+  // Debug logging
+  console.log('Key element found:', keyElement);
+  console.log('Key content length:', key ? key.length : 0);
+  console.log('Key content preview:', key ? key.substring(0, 50) + '...' : 'empty');
+  
+  if (!key || key.trim().length < 10) {
+    console.error('PGP key content appears to be empty or too short');
+    alert('Error: Could not find PGP key content to copy');
+    return;
+  }
+  
+  // Clean up the key text
+  key = key.trim();
   
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(key.trim()).then(() => {
+    navigator.clipboard.writeText(key).then(() => {
       showCopySuccess();
+      console.log('Successfully copied to clipboard');
     }).catch((err) => {
       console.error('Modern clipboard API failed:', err);
-      fallbackCopy(key.trim());
+      fallbackCopy(key);
     });
   } else {
-    fallbackCopy(key.trim());
+    fallbackCopy(key);
   }
 }
 
@@ -31,8 +47,14 @@ function fallbackCopy(text) {
   textArea.select();
   
   try {
-    document.execCommand('copy');
-    showCopySuccess();
+    const success = document.execCommand('copy');
+    if (success) {
+      showCopySuccess();
+      console.log('Fallback copy successful');
+    } else {
+      console.error('execCommand returned false');
+      alert('Failed to copy to clipboard. Please copy manually.');
+    }
   } catch (err) {
     console.error('Fallback copy failed:', err);
     alert('Failed to copy to clipboard. Please copy manually.');
