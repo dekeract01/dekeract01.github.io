@@ -11,24 +11,6 @@ redirect_from:
   * primary: dekeract01@icloud.com
   * academic: t.ala@soton.ac.uk
 
-<div style="position: relative;">
-  <pre id="pgp-key">-----BEGIN PGP PUBLIC KEY BLOCK-----
-mQGNBGmL75IBDAC7JhLT1mskO4+G2NxQbHZ6PhgwhYMLQxHzgdtKNrZQN6Qb2OS/...
------END PGP PUBLIC KEY BLOCK-----</pre>
-  <button 
-    onclick="copyPGPKey()" 
-    style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer;">
-    <!-- Clipboard SVG icon or Unicode -->
-    <span title='Copy to clipboard'>📋</span>
-  </button>
-</div>
-<script>
-function copyPGPKey() {
-  const key = document.getElementById('pgp-key').innerText;
-  navigator.clipboard.writeText(key);
-}
-</script>
-
 
 ## PGP Key
 
