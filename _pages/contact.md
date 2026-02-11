@@ -15,7 +15,7 @@ redirect_from:
 ## PGP Key
 
 <div style="position: relative;">
-<pre id="pgp-key" style="background: #f8f8f8; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px;">-----BEGIN PGP PUBLIC KEY BLOCK-----
+<pre id="pgp-key" style="background: #f8f8f8; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; width: 100%; max-width: 650px;">-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQGNBGmL75IBDAC7JhLT1mskO4+G2NxQbHZ6PhgwhYMLQxHzgdtKNrZQN6Qb2OS/
 kdu1QuADPTMu7j+9g60dky2Nk7BgvBg8CK4/KD+PpHbGaHX9QDWAscCItDccTBxu
@@ -67,8 +67,9 @@ L8m0zag8AgyXUpXvUMAe1Q==
 
 <script>
 function copyPGPKey() {
-  const key = document.getElementById('pgp-key').innerText;
-  navigator.clipboard.writeText(key).then(() => {
+  const keyElement = document.getElementById('pgp-key');
+  const key = keyElement.textContent || keyElement.innerText;
+  navigator.clipboard.writeText(key.trim()).then(() => {
     const btn = document.getElementById('copy-btn');
     const originalSVG = btn.innerHTML;
     btn.innerHTML = '<span style="color: #228B22; font-size: 14px;">✓</span>';
@@ -76,7 +77,20 @@ function copyPGPKey() {
       btn.innerHTML = originalSVG;
     }, 2000);
   }).catch(() => {
-    alert('Failed to copy to clipboard');
+    // Fallback for older browsers
+    const textArea = document.createElement('textarea');
+    textArea.value = key.trim();
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    
+    const btn = document.getElementById('copy-btn');
+    const originalSVG = btn.innerHTML;
+    btn.innerHTML = '<span style="color: #228B22; font-size: 14px;">✓</span>';
+    setTimeout(() => {
+      btn.innerHTML = originalSVG;
+    }, 2000);
   });
 }
 </script>
