@@ -65,35 +65,7 @@ L8m0zag8AgyXUpXvUMAe1Q==
 </button>
 </div>
 
-<script>
-function copyPGPKey() {
-  const keyElement = document.getElementById('pgp-key');
-  const key = keyElement.textContent || keyElement.innerText;
-  navigator.clipboard.writeText(key.trim()).then(() => {
-    const btn = document.getElementById('copy-btn');
-    const originalSVG = btn.innerHTML;
-    btn.innerHTML = '<span style="color: #228B22; font-size: 14px;">✓</span>';
-    setTimeout(() => {
-      btn.innerHTML = originalSVG;
-    }, 2000);
-  }).catch(() => {
-    // Fallback for older browsers
-    const textArea = document.createElement('textarea');
-    textArea.value = key.trim();
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
-    
-    const btn = document.getElementById('copy-btn');
-    const originalSVG = btn.innerHTML;
-    btn.innerHTML = '<span style="color: #228B22; font-size: 14px;">✓</span>';
-    setTimeout(() => {
-      btn.innerHTML = originalSVG;
-    }, 2000);
-  });
-}
-</script>
+{% include pgp-copy-script.html %}
 
 **Key ID:** D3E51D9D5AAF21DBF8BDD89716AFD02F11706E6D  
 **Algorithm:** RSA 3072  
