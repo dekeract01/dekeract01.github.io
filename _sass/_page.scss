@@ -50,6 +50,7 @@
 }
 
 .page__content {
+  font-family: $serif;
 
   h2 {
     padding-bottom: 0.5em;
@@ -58,6 +59,7 @@
 
   p, li, dl {
     font-size: 0.9em;
+    font-family: $serif;
   }
 
   /* paragraph indents */
@@ -87,13 +89,13 @@
 
   dt {
     margin-top: 1em;
-    font-family: $sans-serif;
+    font-family: $serif;
     font-weight: bold;
   }
 
   dd {
     margin-left: 1em;
-    font-family: $sans-serif;
+    font-family: $serif;
     font-size: $type-size-6;
   }
 
