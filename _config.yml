@@ -81,15 +81,15 @@ analytics:
 
 # Site Author
 author:
-  name             : "Teja Ala"
+  name             : #"Teja Ala"
   avatar           : "profile.png"
   bio              : "PhD Researcher"
-  pronoun          : "He/Him"
-  location         : #"Southampton, UK"
+  pronoun          : #"He/Him"
+  location         : "Southampton, UK"
   employer         : "University of Southampton"
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
-  email            : "dekeract01@gmail.com"
+  email            : "dekeract01@icloud.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -104,7 +104,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "ganeshala/"
+  linkedin         : "tejaala/"
   orcid            : "https://orcid.org/0000-0002-8337-6702"
   pinterest        :
   soundcloud       :
