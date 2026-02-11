@@ -8,7 +8,7 @@ redirect_from:
 
 ## Email
 
-  * primary: dekeract01@gmail.com
+  * primary: dekeract01@icloud.com
   * academic: t.ala@soton.ac.uk
 
 ## PGP Key
