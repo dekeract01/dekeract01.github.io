@@ -85,7 +85,7 @@ author:
   avatar           : "profile.png"
   bio              : "PhD Researcher"
   pronoun          : #"He/Him"
-  location         : "Southampton, UK"
+  location         : "Liverpool, UK" #"Southampton, UK"
   employer         : "University of Southampton"
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
