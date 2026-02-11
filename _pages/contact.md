@@ -11,10 +11,29 @@ redirect_from:
   * primary: dekeract01@icloud.com
   * academic: t.ala@soton.ac.uk
 
+<div style="position: relative;">
+  <pre id="pgp-key">-----BEGIN PGP PUBLIC KEY BLOCK-----
+mQGNBGmL75IBDAC7JhLT1mskO4+G2NxQbHZ6PhgwhYMLQxHzgdtKNrZQN6Qb2OS/...
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+  <button 
+    onclick="copyPGPKey()" 
+    style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer;">
+    <!-- Clipboard SVG icon or Unicode -->
+    <span title='Copy to clipboard'>📋</span>
+  </button>
+</div>
+<script>
+function copyPGPKey() {
+  const key = document.getElementById('pgp-key').innerText;
+  navigator.clipboard.writeText(key);
+}
+</script>
+
+
 ## PGP Key
 
-```
------BEGIN PGP PUBLIC KEY BLOCK-----
+<div style="position: relative;">
+<pre id="pgp-key" style="background: #f8f8f8; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px;">-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQGNBGmL75IBDAC7JhLT1mskO4+G2NxQbHZ6PhgwhYMLQxHzgdtKNrZQN6Qb2OS/
 kdu1QuADPTMu7j+9g60dky2Nk7BgvBg8CK4/KD+PpHbGaHX9QDWAscCItDccTBxu
@@ -55,8 +74,30 @@ sYc66H1fk0BecjGEZH0OzDg8kriqyiDWyULI22b+Pbfsz/YgTrMwISVmRbaQCc/I
 hIUE9phyVeLpSYYwfiDnNPRQcH1i773IVMQ1H4/lRIkaOe/gOJyvTIpFjy3IuZAG
 L8m0zag8AgyXUpXvUMAe1Q==
 =L+uK
------END PGP PUBLIC KEY BLOCK-----
-```
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+<button id="copy-btn" onclick="copyPGPKey()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; padding: 5px;" title="Copy to clipboard">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+  </svg>
+</button>
+</div>
+
+<script>
+function copyPGPKey() {
+  const key = document.getElementById('pgp-key').innerText;
+  navigator.clipboard.writeText(key).then(() => {
+    const btn = document.getElementById('copy-btn');
+    const originalSVG = btn.innerHTML;
+    btn.innerHTML = '<span style="color: #228B22; font-size: 14px;">✓</span>';
+    setTimeout(() => {
+      btn.innerHTML = originalSVG;
+    }, 2000);
+  }).catch(() => {
+    alert('Failed to copy to clipboard');
+  });
+}
+</script>
 
 **Key ID:** D3E51D9D5AAF21DBF8BDD89716AFD02F11706E6D  
 **Algorithm:** RSA 3072  
