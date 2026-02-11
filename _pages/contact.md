@@ -15,7 +15,7 @@ redirect_from:
 ## PGP Key
 
 <div style="position: relative;">
-<pre id="pgp-key" style="background: #f8f8f8; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; width: 100%; max-width: 650px;">-----BEGIN PGP PUBLIC KEY BLOCK-----
+<pre id="pgp-key" style="background: #f8f8f8; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; width: 100%; max-width: 450px;">-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQGNBGmL75IBDAC7JhLT1mskO4+G2NxQbHZ6PhgwhYMLQxHzgdtKNrZQN6Qb2OS/
 kdu1QuADPTMu7j+9g60dky2Nk7BgvBg8CK4/KD+PpHbGaHX9QDWAscCItDccTBxu
