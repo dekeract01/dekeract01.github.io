@@ -10,7 +10,7 @@
 locale                   : "en-UK"
 title                    : "Teja Ala"
 title_separator          : "-"
-# name                     : &name "Teja Ala"
+name                     : &name "Teja Ala"
 description              : &description "personal description"
 url                      : https://dekeract01.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
