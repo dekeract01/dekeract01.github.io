@@ -17,7 +17,7 @@ I used a combination of **Linear Stability Theory** and **Direct Numerical Simul
 
 ## Computational Methods
 
-One of the exciting aspects of my research was extending an open-source computational tool called **OpenSBLI** (https://github.com/opensbli/opensbli) to handle these extreme conditions. I developed capabilities to simulate scenarios where air molecules are in various states of thermal and vibrational nonequilibrium—essentially when the air can't keep up with the rapid changes in temperature and pressure.
+One of the exciting aspects of my research was extending an open-source computational tool called **OpenSBLI** ([https://github.com/opensbli/opensbli](https://github.com/opensbli/opensbli)) to handle these extreme conditions. I developed capabilities to simulate scenarios where air molecules are in various states of thermal and vibrational nonequilibrium—essentially when the air can't keep up with the rapid changes in temperature and pressure.
 
 ## Key Discoveries
 
