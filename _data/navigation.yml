@@ -6,13 +6,13 @@ main:
   - title: "Research"
     url: /research/    
 
-  - title: "Projects"
-    url: /projects/    
+  # - title: "Projects"
+  #   url: /projects/    
     
 #   - title: "Portfolio"
 #     url: /portfolio/
         
-  - title: "Posts"
+  - title: "Projects"
     url: /posts/
     
   # - title: "CV"
