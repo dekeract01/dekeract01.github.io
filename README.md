@@ -1,6 +1,6 @@
 # Teja Ala - Personal Webpage
 
-A personal academic website built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/). This site showcases research, publications, teaching experience, and professional portfolio.
+A personal academic website built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/). This site showcases research, publications, teaching experience, and professional portfolio. Had to fork the latest version for newer features.
 
 **Live Site:** https://dekeract01.github.io
 
@@ -129,6 +129,6 @@ This is a personal website, but contributions or suggestions are welcome! Feel f
 
 ---
 
-**Last Updated:** 13-02-2026 19:51:36 UTC
+**Last Updated:** 13-02-2026 19:54:18 UTC
 
 *For more information about the Minimal Mistakes theme, visit: https://mmistakes.github.io/minimal-mistakes/*
