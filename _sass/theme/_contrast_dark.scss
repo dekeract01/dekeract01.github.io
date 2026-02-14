@@ -2,7 +2,7 @@
    CONTRAST THEME - DARK VERSION
    ========================================================================== */
 /* Color codes used for the theme */
-$primary-color              : #ff6c60;
+$primary-color              : mix(#fff, #228B22, 50%);
 $background                 : #000000;
 $background-light           : #1a1a1a;
 $background-lighter         : #2a2a2a;
@@ -39,6 +39,7 @@ html[data-theme="dark"] {
   --global-base-color                 : #{$primary-color};
   --global-bg-color                   : #{$background};
   --global-footer-bg-color            : #{$footer};
+  --global-picture-border-color       : #{$text};
   --global-border-color               : #{$border};
   --global-dark-border-color          : #{$border-light};
   --global-code-background-color      : #{$background-light};

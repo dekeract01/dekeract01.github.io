@@ -2,7 +2,7 @@
    CONTRAST THEME - LIGHT VERSION
    ========================================================================== */
 /* Color codes used for the theme */
-$primary-color              : #b60000;
+$primary-color              : #228B22;
 $dark-primary-color         : mix(#000, $primary-color, 40%);
 $darker-primary-color       : mix(#000, $primary-color, 60%);
 $light-primary-color        : mix(#fff, $primary-color, 50%);
@@ -42,7 +42,8 @@ $sidebar-screen-min-width   : 1024px;
 :root {
   --global-base-color                 : #{$primary-color};
   --global-bg-color                   : #{$background};
-  --global-footer-bg-color            : #{$footer};
+  --global-footer-bg-color            : #{$text};
+  --global-picture-border-color       : #{$text};
   --global-border-color               : #{$border};
   --global-dark-border-color          : #{$border-dark};
   --global-code-background-color      : #{$background-light};
@@ -59,6 +60,7 @@ $sidebar-screen-min-width   : 1024px;
   --global-toc-bg-color               : #{$background-light};
   --global-selection-bg-color         : #{$selection-bg};
   --global-selection-text-color       : #{$selection-text};
+  --global-footer-text-color-light    : #ffffff;
 }
 
 /* Text selection styling for light theme */
@@ -71,6 +73,7 @@ $sidebar-screen-min-width   : 1024px;
   background-color: var(--global-selection-bg-color);
   color: var(--global-selection-text-color);
 }
+
 
 /* Override notice colors for high contrast */
 .page__content {
@@ -86,7 +89,7 @@ $sidebar-screen-min-width   : 1024px;
 }
 
 html:not([data-theme="dark"]) footer {
-  color: #000000;
+  color: var(--global-footer-text-color-light);
 }
 
 // Do not change the color of the social icons in the feed icons

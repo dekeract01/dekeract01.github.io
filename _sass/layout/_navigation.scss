@@ -244,7 +244,7 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        background: var(--global-text-color);
+        background: var(--global-base-color);
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
@@ -260,7 +260,8 @@
       }
     }
     
-    .selected a:before {
+    /* Hide underline on selected items, but not on the site title */
+    .selected:not(.masthead__menu-item--lg) a:before {
       display: none;
     }
   }

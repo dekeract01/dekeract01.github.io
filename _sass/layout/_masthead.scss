@@ -65,15 +65,18 @@
     padding-right: 2em;
     font-weight: 700;
   }
+  
+  /* Only disable pointer events for non-title menu items when selected */
+  &:not(&--lg).selected a {
+    pointer-events: none;
+    cursor: default;
+  }
 }
 
 .masthead__menu-item.selected a {
   color: var(--global-text-color);
-  pointer-events: none; /* Move this here */
-  cursor: default; /* Move this here too */
 }
 
 .masthead__menu-item.selected a:hover {
   color: var(--global-text-color);
-  /* No need to repeat pointer-events and cursor here */
 }
