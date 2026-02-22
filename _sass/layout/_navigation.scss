@@ -186,7 +186,8 @@
     font-size: 20px;
 
     &:hover {
-      color: var(--global-masthead-link-color-hover);
+      // color: var(--global-masthead-link-color-hover);
+      color: var(--global-text-color);
     }
   }
 
@@ -260,9 +261,11 @@
       }
     }
     
-    /* Hide underline on selected items, but not on the site title */
+    /* Show underline on selected items */
     .selected:not(.masthead__menu-item--lg) a:before {
-      display: none;
+      -webkit-transform: scaleX(1);
+          -ms-transform: scaleX(1);
+              transform: scaleX(1);
     }
   }
 
