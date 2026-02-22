@@ -1,0 +1,11 @@
+services:
+  jekyll-site:
+    image: jekyll/jekyll:4.0
+    volumes: 
+      - .:/srv/jekyll
+      - ./vendor/bundle:/usr/local/bundle
+    ports: 
+      - 4000:4000
+    environment:
+      - JEKYLL_ENV=docker
+    command: sh -c "bundle update && jekyll serve -H 0.0.0.0 --config _config.yml,_config_docker.yml"
