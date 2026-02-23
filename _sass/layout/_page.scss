@@ -56,7 +56,9 @@
   }
 
   p, li, dl {
-    font-size: 17px;    letter-spacing: 0.3px;  }
+    font-size: 1em;
+    letter-spacing: 0.3px;
+  }
 
   /* paragraph indents */
   p {
@@ -85,13 +87,13 @@
 
   dt {
     margin-top: 1em;
-    font-family: $sans-serif;
+    font-family: $serif;
     font-weight: bold;
   }
 
   dd {
     margin-left: 1em;
-    font-family: $sans-serif;
+    font-family: $serif;
     font-size: $type-size-6;
   }
 
@@ -227,7 +229,7 @@
 .page__meta {
   margin-top: 2em;
   color: var(--global-text-color-light);
-  font-family: $sans-serif;
+  font-family: $serif;
   font-size: $type-size-6;
 
   p {

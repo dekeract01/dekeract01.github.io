@@ -7,19 +7,19 @@
    ========================================================================== */
 
 /* Used to set the size for <em> */
-$doc-font-size              : 13;
+$doc-font-size              : 14;
 
 /* Paragraph indention */
 $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
 /* System typefaces */
-$serif                      : "CMU Serif", Georgia, Times, serif;
-$sans-serif                 : "CMU Serif", -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-$monospace                  : "CMU Typewriter", Monaco, Consolas, "Lucida Console", monospace;
+$serif                      : Georgia, Times, serif;
+$sans-serif                 : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 /* Sans serif typefaces */
-$sans-serif-narrow          : $sans-serif;
+$sans-serif-narrow          : $serif;
 $helvetica                  : Helvetica, "Helvetica Neue", Arial, sans-serif;
 
 /* Serif typefaces */
@@ -30,14 +30,14 @@ $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 
 /* Type scale */
-$type-size-1                : 1.2em;    // h1 - page titles (Publications, etc)
-$type-size-2                : 1.1em;    // h2 - section headings (Journal Articles)
-$type-size-3                : 1.0em;    // h3
-$type-size-4                : 0.95em;   // h4
-$type-size-5                : 0.9em;    // body text
-$type-size-6                : 0.75em;   // small text
-$type-size-7                : 0.6875em; // smaller
-$type-size-8                : 0.625em;  // smallest
+$type-size-1                : 1.50em;   // ~24px - page titles
+$type-size-2                : 1.27em;   // ~20px - talk titles
+$type-size-3                : 1.04em;   // ~17px
+$type-size-4                : 1.45em;    // ~20px
+$type-size-5                : 0.9em;    // ~13px
+$type-size-6                : 0.87em;   // ~14px
+$type-size-7                : 0.79em;   // ~13px
+$type-size-8                : 0.72em;   // ~12px
 
 $global-font-family         : $serif;
 $header-font-family         : $serif;

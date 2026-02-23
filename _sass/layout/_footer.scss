@@ -33,7 +33,7 @@
     margin-right: auto;
     margin-top: 1em;
     max-width: 100%;
-    padding: 0 1em 1em;
+    padding: 2em 2em 2em;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
@@ -73,8 +73,8 @@
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: $sans-serif-narrow;
-    font-size: $type-size-6;
+    font-family: $serif;
+    font-size: $type-size-7;
     text-transform: uppercase;
   }
 
