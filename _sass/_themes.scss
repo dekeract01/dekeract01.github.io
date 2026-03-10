@@ -30,14 +30,14 @@ $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 
 /* Type scale */
-$type-size-1                : 1.50em;   // ~24px - page titles
-$type-size-2                : 1.27em;   // ~20px - talk titles
-$type-size-3                : 1.04em;   // ~17px
-$type-size-4                : 1.45em;    // ~20px
-$type-size-5                : 0.9em;    // ~13px
-$type-size-6                : 0.87em;   // ~14px
-$type-size-7                : 0.79em;   // ~13px
-$type-size-8                : 0.72em;   // ~12px
+$type-size-1                : 1.563em;  // ~25px - page titles (h1)
+$type-size-2                : 1.25em;   // ~20px - section/talk titles (h2)
+$type-size-3                : 1.125em;  // ~18px - h3
+$type-size-4                : 1em;      // ~16px - h4
+$type-size-5                : 0.75em;   // ~12px - navigation, sidebar text
+$type-size-6                : 1em;      // ~16px - body/paragraph text
+$type-size-7                : 0.6875em; // ~11px - footer text
+$type-size-8                : 0.625em;  // ~10px - smallest elements
 
 $global-font-family         : $serif;
 $header-font-family         : $serif;

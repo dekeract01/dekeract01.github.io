@@ -1,0 +1,54 @@
+<script>
+function copyPGPKey() {
+  const keyElement = document.getElementById('pgp-key');
+  if (!keyElement) {
+    console.error('PGP key element not found');
+    return;
+  }
+  
+  const key = keyElement.textContent || keyElement.innerText;
+  
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(key.trim()).then(() => {
+      showCopySuccess();
+    }).catch((err) => {
+      console.error('Modern clipboard API failed:', err);
+      fallbackCopy(key.trim());
+    });
+  } else {
+    fallbackCopy(key.trim());
+  }
+}
+
+function fallbackCopy(text) {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  textArea.style.position = 'fixed';
+  textArea.style.left = '-999999px';
+  textArea.style.top = '-999999px';
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  
+  try {
+    document.execCommand('copy');
+    showCopySuccess();
+  } catch (err) {
+    console.error('Fallback copy failed:', err);
+    alert('Failed to copy to clipboard. Please copy manually.');
+  }
+  
+  document.body.removeChild(textArea);
+}
+
+function showCopySuccess() {
+  const btn = document.getElementById('copy-btn');
+  if (btn) {
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<span style="color: #228B22; font-size: 14px;">✓</span>';
+    setTimeout(() => {
+      btn.innerHTML = originalHTML;
+    }, 2000);
+  }
+}
+</script>

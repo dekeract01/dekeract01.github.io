@@ -1,0 +1,72 @@
+---
+permalink: /contact/
+title: "Contact"
+author_profile: true
+redirect_from: 
+  # - /contact/
+---
+
+## Email
+
+  * primary: dekeract01@icloud.com
+  * academic: t.ala@soton.ac.uk
+
+
+## PGP Key
+
+<div style="position: relative; max-width: 650px;">
+<pre id="pgp-key" style="background: #f8f8f8; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; width: 100%;">-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+L8m0zag8AgyXUpXvUMAe1Q==
+=L+uK
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+<button id="copy-btn" onclick="copyPGPKey()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; padding: 5px;" title="Copy to clipboard">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+  </svg>
+</button>
+</div>
+
+{% include pgp-copy-script.html %}
+
+**Key ID:** D3E51D9D5AAF21DBF8BDD89716AFD02F11706E6D  
+**Algorithm:** RSA 3072  
+**Expires:** 2027-02-11
