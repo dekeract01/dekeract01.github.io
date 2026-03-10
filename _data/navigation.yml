@@ -12,7 +12,7 @@ main:
     url: /about/
 
   - title: "Research"
-    url: /talks/    
+    url: /research/    
 
   # - title: "Teaching"
   #   url: /teaching/    
@@ -21,7 +21,8 @@ main:
   #   url: /portfolio/
         
   - title: "Projects"
-    url: /year-archive/
+    # url: /year-archive/
+    url: /projects/
     
   # - title: "CV"
   #   url: /cv/

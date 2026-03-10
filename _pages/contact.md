@@ -1,6 +1,6 @@
 ---
 permalink: /contact/
-title: "Contact"
+# title: "Contact"
 author_profile: true
 redirect_from: 
   # - /contact/
