@@ -6,7 +6,7 @@ redirect_from:
   # - /contact/
 ---
 
-## Email
+<!-- ## Email -->
 
   * primary: dekeract01@icloud.com
   * academic: t.ala@soton.ac.uk
@@ -15,7 +15,7 @@ redirect_from:
 ## PGP Key
 
 <div style="position: relative; max-width: 650px;">
-<pre id="pgp-key" style="background: #f8f8f8; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; width: 100%;">-----BEGIN PGP PUBLIC KEY BLOCK-----
+<pre id="pgp-key" style="background: var(--global-code-background-color); color: var(--global-text-color); padding: 15px; border: 1px solid var(--global-border-color); border-radius: 4px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; width: 100%;">-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQGNBGmL75IBDAC7JhLT1mskO4+G2NxQbHZ6PhgwhYMLQxHzgdtKNrZQN6Qb2OS/
 kdu1QuADPTMu7j+9g60dky2Nk7BgvBg8CK4/KD+PpHbGaHX9QDWAscCItDccTBxu
