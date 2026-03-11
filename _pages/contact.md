@@ -6,7 +6,7 @@ redirect_from:
   # - /contact/
 ---
 
-<!-- ## Email -->
+## Email
 
   * primary: dekeract01@icloud.com
   * academic: t.ala@soton.ac.uk
