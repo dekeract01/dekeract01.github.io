@@ -9,11 +9,16 @@ author_profile: true
 
 My research focuses on understanding how air flows around hypersonic vehicles during high-speed, low-altitude flight. At these extreme conditions, the behaviour of airflow becomes fascinatingly complex and critically important for vehicle design.
 
+<figure style="text-align: center;">
+	<img src="/images/schematic_wedge.png" alt="schematic of a hypersonic wedge configuration" style="max-width: 700px; width: 100%;">
+	<figcaption>schematic of a hypersonic wedge configuration.</figcaption>
+</figure>
+
 ## Hypersonic Boundary-Layer Transition
 
 The core of my PhD work explored what happens when smooth, laminar airflow suddenly becomes chaotic and turbulent around hypersonic vehicles. This transition dramatically affects how much heat gets transferred to the vehicle's surface, a crucial factor for designing heat shields and ensuring crew safety.
 
-I used a combination of **Linear Stability Theory** and **Direct Numerical Simulation** to investigate special types of instabilities called *Mack modes*. These are essentially waves that grow in the airflow and can trigger the transition to turbulence. What makes this particularly challenging is that at hypersonic speeds, the air itself starts behaving differently due to extreme temperatures—molecules begin vibrating and even breaking apart.
+I used a combination of **Linear Stability Theory** and **Direct Numerical Simulation** to investigate special types of instabilities called *Mack modes*. These are essentially waves that grow in the airflow and can trigger the transition to turbulence. What makes this particularly challenging is that at hypersonic speeds, the air itself starts behaving differently due to extreme temperatures and molecules begin vibrating and even breaking apart.
 
 ## Computational Methods
 
