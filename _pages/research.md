@@ -34,4 +34,6 @@ Through detailed comparisons between theoretical predictions and high-fidelity s
 
 This research has practical implications for the design of hypersonic vehicles, helping engineers better predict and manage the extreme thermal loads these vehicles experience.
 
-*More details about specific projects and publications coming soon!* 
+<!-- *More details about specific projects and publications coming soon!*  -->
+
+Thesis:  ([http://dx.doi.org/10.5258/SOTON/PG/T188](doi:10.5258/SOTON/PG/T188))
