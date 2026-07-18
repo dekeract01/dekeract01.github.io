@@ -11,7 +11,6 @@ My research focuses on understanding how air flows around hypersonic vehicles du
 
 <figure style="text-align: center;">
 	<img src="/images/schematic_wedge.png" alt="schematic of a hypersonic wedge configuration" style="max-width: 700px; width: 100%;">
-	<figcaption>schematic of a hypersonic wedge configuration.</figcaption>
 </figure>
 
 ## Hypersonic Boundary-Layer Transition
