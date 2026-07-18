@@ -10,7 +10,7 @@ author_profile: true
 My research focuses on understanding how air flows around hypersonic vehicles during high-speed, low-altitude flight. At these extreme conditions, the behaviour of airflow becomes fascinatingly complex and critically important for vehicle design.
 
 <figure style="text-align: center;">
-	<img src="/images/schematic_wedge.png" alt="schematic of a hypersonic wedge configuration" style="max-width: 700px; width: 100%;">
+	<img src="schematic_wedge.png" alt="schematic of a hypersonic wedge configuration" style="max-width: 700px; width: 100%;">
 	<figcaption>schematic of a hypersonic wedge configuration.</figcaption>
 </figure>
 
@@ -36,4 +36,4 @@ This research has practical implications for the design of hypersonic vehicles, 
 
 <!-- *More details about specific projects and publications coming soon!*  -->
 
-Thesis:  ([http://dx.doi.org/10.5258/SOTON/PG/T188](doi:10.5258/SOTON/PG/T188))
+Thesis: ([http://dx.doi.org/10.5258/SOTON/PG/T188](doi:10.5258/SOTON/PG/T188))
