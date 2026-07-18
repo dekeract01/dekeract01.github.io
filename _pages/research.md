@@ -10,7 +10,7 @@ author_profile: true
 My research focuses on understanding how air flows around hypersonic vehicles during high-speed, low-altitude flight. At these extreme conditions, the behaviour of airflow becomes fascinatingly complex and critically important for vehicle design.
 
 <figure style="text-align: center;">
-	<img src="/images/schematic_wedge.png" alt="schematic of a hypersonic wedge configuration" style="max-width: 700px; width: 100%;">
+	<img src="/images/schematic_wedge.png" alt="schematic of a hypersonic wedge configuration" style="max-width: 650px; width: 100%;">
 </figure>
 
 ## Hypersonic Boundary-Layer Transition
