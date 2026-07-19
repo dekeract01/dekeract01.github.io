@@ -38,6 +38,8 @@ hRfMTQAzErIWfvyQ6zAi6wE=
 
 {% include pgp-copy-script.html %}
 
-**Key ID:** FD23A32A74AAF87E5B75EE15548715C80C6372FE 
+**Key ID:** FD23A32A74AAF87E5B75EE15548715C80C6372FE
+
 **Algorithm:** ed25519 
+
 **Expires:** 11-02-2027
