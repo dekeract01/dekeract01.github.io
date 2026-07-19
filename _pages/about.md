@@ -7,8 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-I'm a computational enthusiast and recent PhD holder from the University of Southampton, where I spent my time working on understanding laminar-turbulence transition in hypersonic flows. These days, I'm passionate about data science and computational methods, I love finding elegant ways to solve complex problems. I'm also an open-source project enthusiast. This site is where I share my research, projects, and explorations. Hopefully you'll find something here that sparks your curiosity or interest!
+I'm a modelling and simulations engineer, and I recently completed a PhD at the University of Southampton, where I studied laminar–turbulent transition in hypersonic flows. These days I work on scientific computing and numerical methods, and I love finding elegant ways to solve hard problems. I've also contributed to a few open source projects along the way. This site is where I share my research, projects and explorations.
 
+I'm a keen advocate for STEM outreach and volunteered with the Royal Aeronautical Society for many years. Beyond that, you'll find me at my local parkrun, out on the bike, on a hike somewhere, losing hours to chess.com, or on the tennis court. Hopefully something here sparks your curiosity!
 
 <!-- This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
 
