@@ -35,4 +35,5 @@ This research has practical implications for the design of hypersonic vehicles, 
 
 <!-- *More details about specific projects and publications coming soon!*  -->
 
-Thesis: ([https://eprints.soton.ac.uk/512221/](doi:10.5258/SOTON/PG/T188))
+Thesis: ([doi:10.5258/SOTON/PG/T188](https://eprints.soton.ac.uk/512221/))
+
