@@ -1,6 +1,6 @@
 ---
 title: "Wave Equation Solver Benchmarks"
-excerpt: "Numerical methods, language/performance comparison across C++, Fortran, Rust, Python, Julia, MPI, OpenMP, and OpenCL."
+excerpt: "Numerical methods and performance comparison across C++, CUDA, Fortran, Rust, Python, Julia, MPI, OpenMP, and OpenCL."
 collection: projects
 date: 2025-12-12
 permalink: /projects/wave-equation-solver/
@@ -43,18 +43,18 @@ There are methods better suited to particular applications. For example, problem
 
 ## One problem, several implementations
 
-The repository currently contains serial C++, Fortran, Julia, Python, Python with Numba, and Rust versions, alongside OpenMP C++, MPI C++, MPI Fortran, and OpenCL C++ implementations. Keeping the numerical setup aligned lets me investigate practical questions instead of comparing unrelated programs:
+The repository currently contains serial C++, Fortran, Julia, Python, Python with Numba, and Rust versions, alongside OpenMP C++, MPI C++, MPI Fortran, OpenCL C++, and CUDA C++ implementations. Keeping the numerical setup aligned lets me investigate practical questions instead of comparing unrelated programs:
 
 - How does a language or compiler shape a simple array-based solver?
 - What changes when work is shared between CPU threads, MPI ranks, or a GPU?
 - How much do build configuration, floating-point precision, and output choices matter?
 - Does the accelerated version still reproduce the analytical solution?
 
-The CPU implementations use double precision. The OpenCL implementation currently uses single precision, which makes its error larger but is also a useful reminder that speed and precision are engineering choices, not afterthoughts.
+The CPU implementations and the CUDA C++ implementation use double precision. The OpenCL implementation currently uses single precision, which makes its error larger but is also a useful reminder that speed and precision are engineering choices, not afterthoughts.
 
 ## Running it on your machine
 
-The benchmark is meant to be useful beyond my laptop. The quickest way to begin is to clone the repository, install the toolchains for the implementations you want to try, and run an individual directory. The C++, Fortran, OpenMP, MPI, OpenCL, and Rust directories use `make`; Julia and the Python variants run their source files directly.
+The benchmark is meant to be useful beyond my laptop. The quickest way to begin is to clone the repository, install the toolchains for the implementations you want to try, and run an individual directory. The C++, CUDA, Fortran, OpenMP, MPI, OpenCL, and Rust directories use `make`; Julia and the Python variants run their source files directly.
 
 For example, a C++ run is:
 
@@ -78,7 +78,17 @@ You do not need every compiler or runtime to use the repository. Start with one 
 
 The plots report time per iteration, iterations per second, and maximum error. They are useful for observing a particular machine and configuration, not for declaring universal language rankings. CPU architecture, compiler version and flags, library versions, thread and MPI-rank choices, GPU hardware, and numerical precision all affect the outcome.
 
-### Performance results
+### Fedora Linux results
+
+These results were produced on a Dell Precision 3660 workstation running Fedora Linux 37 (x86_64), with a 13th-generation Intel Core i9-13900K, 64 GB of memory, and an NVIDIA RTX A4000 GPU. The CUDA C++ implementation is the fastest result in this configuration, at approximately $0.767\,\mathrm{ms}$ per iteration, or about $1{,}300$ iterations per second. Its maximum error is $1.23 \times 10^{-14}$.
+
+![Fedora Linux performance comparison showing time per iteration and iterations per second](/images/result_benchmark_comparison_fedora.png)
+
+![Fedora Linux maximum-error comparison across implementations](/images/result_benchmark_error_fedora.png)
+
+The CUDA implementation and most other Fedora runs remain close to double-precision accuracy. The MPI Fortran result has a larger error in this run, around $6.17 \times 10^{-7}$, so it is a useful example of why the accuracy plot belongs alongside the timing data.
+
+### macOS results
 
 ![Performance comparison showing time per iteration and iterations per second](/images/result_benchmark_comparison.png)
 
