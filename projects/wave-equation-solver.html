@@ -44,7 +44,7 @@
         </div>
         <div>
           <dt>Last updated</dt>
-          <dd><time datetime="2026-08-01">1 August 2026</time></dd>
+          <dd><time datetime="2026-08-02">2 August 2026</time></dd>
         </div>
         <div>
           <dt>Repository</dt>
@@ -74,9 +74,10 @@ phi_exact(x, t) = sin(2pi(x - c0 t))</code></pre>
     of 0.5, a time step of 10<sup>-7</sup>, and 1,000 iterations.</p>
 
     <p>The repository includes serial C++, Fortran, Julia, Python, Python with Numba, and Rust
-    versions, alongside OpenMP C++, MPI C++, MPI Fortran, OpenCL C++, and CUDA C++ implementations.
-    The CPU and CUDA C++ versions use double precision; the OpenCL version currently uses single
-    precision.</p>
+    versions, alongside OpenMP C++, MPI C++, MPI Fortran, OpenCL C++, and CUDA C++ implementations,
+    plus a standard-parallelism Fortran version that offloads plain <code>do concurrent</code> loops
+    to the GPU from a single source. The CPU, CUDA C++, and standard-parallelism versions use double
+    precision; the OpenCL version currently uses single precision.</p>
 
     <h2>Results</h2>
 
@@ -98,16 +99,40 @@ phi_exact(x, t) = sin(2pi(x - c0 t))</code></pre>
       <figure>
         <a href="https://github.com/dekeract01/wavebench/blob/main/result_benchmark_comparison_macos.png">
           <img src="https://raw.githubusercontent.com/dekeract01/wavebench/main/result_benchmark_comparison_macos.png"
-             alt="macOS benchmark comparison showing time per iteration and iterations per second across implementations">
+               alt="macOS benchmark comparison showing time per iteration and iterations per second across implementations">
+        </a>
         <figcaption>macOS performance comparison.</figcaption>
       </figure>
       <figure>
         <a href="https://github.com/dekeract01/wavebench/blob/main/result_benchmark_error_macos.png">
           <img src="https://raw.githubusercontent.com/dekeract01/wavebench/main/result_benchmark_error_macos.png"
-             alt="macOS maximum-error comparison across implementations">
+               alt="macOS maximum-error comparison across implementations">
+        </a>
         <figcaption>macOS maximum-error comparison.</figcaption>
       </figure>
     </div>
+
+    <p>On the Fedora machine, CUDA C++ is fastest at about 0.767 ms per iteration on the RTX A4000.
+    The result I did not expect was the standard-parallelism Fortran version, which came second at
+    about 1.24 ms on the same GPU. It is ordinary Fortran with <code>do concurrent</code> loops and a
+    single compiler flag, with no CUDA and no directives, so seeing it land within roughly 1.6 times
+    of the hand-written CUDA C++ was a genuine surprise. I am not yet certain where the remaining gap
+    comes from. When I built it, the compiler reported that it was moving the arrays between the CPU
+    and the GPU around each step, so I suspect the difference is mostly data movement rather than the
+    computation itself, but I still need to measure that properly before saying so with any confidence.</p>
+
+    <p>The accuracy figure is the reason I keep it beside the timing. An earlier MPI Fortran run sat
+    far from the others, at about 6.17 &times; 10<sup>-7</sup>, which turned out to be a halo-exchange
+    bug: I was exchanging only one ghost point when the fourth-order stencil reaches two either side.
+    The timing looked perfectly reasonable, so only the error plot revealed it. After widening the
+    halo to two points, MPI Fortran returned to the double-precision floor near 10<sup>-14</sup> along
+    with everything else, including the standard-parallelism version.</p>
+
+    <p>On the macOS machine, OpenCL C++ is fastest because its kernels run on the M1 Pro integrated
+    GPU. This one is expected rather than surprising: the OpenCL version uses single precision, so it
+    handles half as much data, and the integrated GPU shares unified memory with the CPU, so there is
+    no separate host-device transfer. The accuracy figure shows the trade-off, with the single-precision
+    error much higher, at around 10<sup>-5</sup>.</p>
 
     <h2>Run It</h2>
 
@@ -124,8 +149,8 @@ make run</code></pre>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Teja Ala</span>
-    <span><a href="https://github.com/dekeract01">GitHub</a> · <a href="/feed.xml">Feed</a></span>
+    <span>&copy; 2026 Teja Ala</span>
+    <span><a href="https://github.com/dekeract01">GitHub</a> &middot; <a href="/feed.xml">Feed</a></span>
   </div>
 </footer>
 
