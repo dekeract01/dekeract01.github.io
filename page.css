@@ -17,8 +17,7 @@ a{color:var(--accent);text-decoration:none;}
 a:hover{text-decoration:underline;}
 header{position:sticky;top:0;z-index:10;background:var(--bar);border-bottom:1px solid var(--line);}
 .nav{max-width:900px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
-.brand{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;color:var(--ink);letter-spacing:-.01em;}
-.brand-mark{display:grid;place-items:center;width:26px;height:26px;border:1px solid var(--accent);border-radius:50%;color:var(--accent);font-family:Georgia,serif;font-size:1.2rem;font-weight:700;line-height:1;}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;color:var(--ink);letter-spacing:-.01em;}
 .brand:hover{text-decoration:none;}
 nav ul{list-style:none;display:flex;align-items:center;gap:28px;}
 nav a{color:var(--ink);font-size:.95rem;font-weight:500;}
@@ -46,9 +45,8 @@ main.wrap{padding-top:64px;flex:1;}
 .post-preview{margin:0;}
 .post-preview h2{margin-top:0;}
 .post-preview time{color:var(--ink-soft);font-size:.95rem;}
-.project-year{margin-top:28px;}
-.project-year h2{margin:0 0 12px;font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;color:var(--master-dark);}
-.project-year-list{display:grid;gap:16px;}
+.project-list{display:grid;gap:16px;margin-top:16px;}
+.project-card-year{margin:0 0 18px;color:var(--ink);font-size:.95rem;font-weight:600;}
 .benchmark-figures{display:grid;grid-template-columns:1fr;gap:24px;max-width:70ch;margin:18px 0 30px;}
 .benchmark-figures figure{margin:0;}
 .benchmark-figures img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;}
