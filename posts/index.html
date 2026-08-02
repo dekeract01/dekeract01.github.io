@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="0; url=/projects/">
+<link rel="canonical" href="/projects/">
+<title>Projects | Teja Ala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<header><div class="nav"><a class="brand" href="/">Teja Ala</a><button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button><nav><ul id="menu"><li><a href="/about/">About</a></li><li><a href="/research/">Research</a></li><li><a href="/posts/" aria-current="page">Posts</a></li><li><a href="/contact/">Contact</a></li></ul></nav><button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">&#9790;</button></div></header>
+<main class="wrap"><article class="card"><h1>Posts</h1><p>My projects are available on <a href="https://github.com/dekeract01">GitHub</a>. I have always kept my work private, but for the first time in my life I am out of education and have decided to spend time cleaning everything up and releasing clean code.</p><p>Stay tuned: I will be sharing everything from my first Turtle Logo codebase to architecture benchmark cases.</p></article><section class="post-list" aria-label="Posts"><article class="card post-preview"><h2><a href="/posts/wave-equation-solver.html">Wave Equation Solver Benchmarks</a></h2><p><time datetime="2025-12-12">First published 12 December 2025</time> · <time datetime="2026-08-01">Last updated 1 August 2026</time></p><p>A verified one-dimensional advection solver implemented across CPU, GPU, and distributed-memory programming models.</p></article></section></main>
+<footer><div class="wrap"><span>© 2026 Teja Ala</span><span><a href="https://github.com/dekeract01">GitHub</a> · <a href="/feed.xml">Feed</a></span></div></footer>
+<script>const toggle=document.querySelector('.menu-toggle');const menu=document.getElementById('menu');toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',open);});const themeButton=document.querySelector('.theme-toggle');if(localStorage.getItem('theme')==='dark')document.body.classList.add('theme-dark');if(document.body.classList.contains('theme-dark')){themeButton.setAttribute('aria-label','Switch to light mode');themeButton.setAttribute('title','Switch to light mode');}themeButton.addEventListener('click',()=>{const isDark=document.body.classList.toggle('theme-dark');localStorage.setItem('theme',isDark?'dark':'light');themeButton.setAttribute('aria-label',`Switch to ${isDark?'light':'dark'} mode`);themeButton.setAttribute('title',`Switch to ${isDark?'light':'dark'} mode`);});</script>
+</body>
+</html>

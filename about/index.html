@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Teja Ala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<header><div class="nav"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">&#8767;</span>Teja Ala</a><button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button><nav><ul id="menu"><li><a href="/about/" aria-current="page">About</a></li><li><a href="/research/">Research</a></li><li><a href="/blog/">Blog</a></li><li><a href="/projects/">Projects</a></li><li><a href="/contact/">Contact</a></li></ul></nav><button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">&#9790;</button></div></header>
+<main class="wrap"><article class="card"><h1>About</h1><p>I am current working as a modelling and simulations engineer, and I recently completed a PhD at the University of Southampton, where I studied laminar-turbulent transition in hypersonic flows. These days I work on scientific computing and numerical methods, and I love finding elegant ways to solve hard problems. I've also contributed to a few open source projects along the way. This site is where I share my research, projects and explorations.</p><p>I'm a keen advocate for STEM outreach and volunteered with the Royal Aeronautical Society for many years. Beyond that, you'll find me at my local parkrun, out on the bike, on a hike somewhere, losing hours to chess.com, or on the tennis court. Hopefully something here sparks your curiosity!</p></article></main>
+<!-- <div class="card">
+    <h2>Contact and CV</h2>
+    <p>Feel free to check out my <a href="/files/cv.pdf">CV</a> and my
+       <a href="https://www.linkedin.com/in/tejaala">LinkedIn</a> profile.</p>
+
+    <ul class="facts">
+      <li><span class="k">Email</span><span class="v"><a href="mailto:dekeract01@icloud.com">dekeract01@icloud.com</a></span></li>
+      <li><span class="k">Based in</span><span class="v">Milton Keynes, United Kingdom</span></li>
+      <!-- <li><span class="k">Affiliation</span><span class="v">University of Southampton</span></li> -->
+      <!-- <li><span class="k">ORCID</span><span class="v"><a href="https://orcid.org/0000-0002-8337-6702">0000-0002-8337-6702</a></span></li> -->
+      <!-- <li><span class="k">GitHub</span><span class="v"><a href="https://github.com/dekeract01">@dekeract01</a></span></li> -->
+      <!-- LinkedIn omitted here — already linked in the intro line above -->
+      <!-- <li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/tejaala">in/tejaala</a></span></li> -->
+    <!-- </ul> -->
+  <!-- </div> --> -->
+<footer><div class="wrap"><span>© 2026 Teja Ala</span><span><a href="https://github.com/dekeract01">GitHub</a> · <a href="/feed.xml">Feed</a></span></div></footer>
+<script>const toggle=document.querySelector('.menu-toggle');const menu=document.getElementById('menu');toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',open);});const themeButton=document.querySelector('.theme-toggle');if(localStorage.getItem('theme')==='dark')document.body.classList.add('theme-dark');if(document.body.classList.contains('theme-dark')){themeButton.setAttribute('aria-label','Switch to light mode');themeButton.setAttribute('title','Switch to light mode');}themeButton.addEventListener('click',()=>{const isDark=document.body.classList.toggle('theme-dark');localStorage.setItem('theme',isDark?'dark':'light');themeButton.setAttribute('aria-label',`Switch to ${isDark?'light':'dark'} mode`);themeButton.setAttribute('title',`Switch to ${isDark?'light':'dark'} mode`);});</script>
+</body>
+</html>

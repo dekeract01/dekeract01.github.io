@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research | Teja Ala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<header>
+	<div class="nav">
+		<a class="brand" href="/"><span class="brand-mark" aria-hidden="true">&#8767;</span>Teja Ala</a>
+		<button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+		<nav>
+			<ul id="menu">
+				<li><a href="/about/">About</a></li>
+				<li><a href="/research/" aria-current="page">Research</a></li>
+				<li><a href="/blog/">Blog</a></li>
+				<li><a href="/projects/">Projects</a></li>
+				<li><a href="/contact/">Contact</a></li>
+			</ul>
+		</nav>
+		<button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">&#9790;</button>
+	</div>
+</header>
+
+<main class="wrap">
+	<article class="card">
+		<h1>Research</h1>
+		<p>My research focused on understanding how air flowed around hypersonic vehicles during high-speed, low-altitude flight. At these extreme conditions, the behaviour of airflow became complex and critically important for vehicle design.</p>
+
+		<figure class="research-figure">
+			<img src="../images/schematic_wedge.png" alt="Schematic of a hypersonic wedge configuration">
+			<figcaption>The diagram shows air meeting a wedge-shaped surface at hypersonic speed. The wedge turned and compressed the incoming flow, creating a shock wave and a thin, intensely heated layer of air above its surface. The coloured bands represent regions where the molecules responded differently to that rapid heating: some remained close to vibrational equilibrium, while others were vibrationally frozen or out of equilibrium. These molecular energy delays changed the temperature, density, and stability of the boundary layer, which in turn affected when the flow transitioned to turbulence and how much heat reached the vehicle.</figcaption>
+		</figure>
+
+		<h2>Hypersonic Boundary-Layer Transition</h2>
+		<p>The core of my PhD work explored what happened when smooth, laminar airflow suddenly became chaotic and turbulent around hypersonic vehicles. This transition dramatically affected how much heat was transferred to the vehicle's surface, a crucial factor in designing heat shields and ensuring crew safety.</p>
+		<p>I used a combination of <strong>Linear Stability Theory</strong> and <strong>Direct Numerical Simulation</strong> to investigate special types of instabilities called <em>Mack modes</em>. These were waves that grew in high-speed flows and could trigger the transition to turbulence. This was particularly challenging because, at hypersonic speeds, the air behaved differently under extreme temperatures and molecules began vibrating and even breaking apart.</p>
+
+		<h2>Computational Methods</h2>
+		<p>One of the central aspects of my research was extending an open-source computational tool called <a href="https://github.com/opensbli/opensbli">OpenSBLI</a> to handle these extreme conditions. I developed capabilities to simulate scenarios in which air molecules were in various states of thermal and vibrational nonequilibrium, when the air could not keep up with rapid changes in temperature and pressure.</p>
+
+		<h2>Key Discoveries</h2>
+		<ul class="research-list">
+			<li><strong>Thermal effects mattered enormously:</strong> The way temperature was modelled in these flows significantly affected when and how transition occurred.</li>
+			<li><strong>Vibrational nonequilibrium delayed transition:</strong> When molecules could not vibrate fast enough to keep up with rapid temperature changes, this delayed the onset of turbulence.</li>
+			<li><strong>Design implications:</strong> These findings suggested that traditional models might have been overly conservative, potentially leading to heavier, more expensive vehicle designs.</li>
+		</ul>
+
+		<p>This research had practical implications for the design of hypersonic vehicles, helping engineers better predict and manage the extreme thermal loads these vehicles experienced.</p>
+		<p>Thesis: <a href="https://eprints.soton.ac.uk/512221/">doi:10.5258/SOTON/PG/T188</a></p>
+	</article>
+</main>
+
+<footer>
+	<div class="wrap">
+		<span>© 2026 Teja Ala</span>
+		<span><a href="https://github.com/dekeract01">GitHub</a> · <a href="/feed.xml">Feed</a></span>
+	</div>
+</footer>
+<script>const toggle=document.querySelector('.menu-toggle');const menu=document.getElementById('menu');toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',open);});const themeButton=document.querySelector('.theme-toggle');if(localStorage.getItem('theme')==='dark')document.body.classList.add('theme-dark');if(document.body.classList.contains('theme-dark')){themeButton.setAttribute('aria-label','Switch to light mode');themeButton.setAttribute('title','Switch to light mode');}themeButton.addEventListener('click',()=>{const isDark=document.body.classList.toggle('theme-dark');localStorage.setItem('theme',isDark?'dark':'light');themeButton.setAttribute('aria-label',`Switch to ${isDark?'light':'dark'} mode`);themeButton.setAttribute('title',`Switch to ${isDark?'light':'dark'} mode`);});</script>
+</body>
+</html>

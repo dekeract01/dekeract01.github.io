@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teja Ala</title>
+<meta name="description" content="Teja Ala — Modelling & Simulation Engineer">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* --- swap this one line for your own banner image --- */
+    --hero-image: url('images/hero.jpg');
+
+    --ink:      #16181d;   /* primary text            */
+    --ink-soft: #4a4f57;   /* secondary text          */
+    --line:     #e4e5e8;   /* hairline dividers       */
+    --bar:      #f4f4f5;   /* nav bar background      */
+    --paper:    #ffffff;   /* page background         */
+    --master:   #2f5d8a;   /* site accent             */
+    --master-dark:#1d4264; /* headings                */
+    --accent:   #2f5d8a;   /* links / hover           */
+    --accent-2: #6ea3c8;   /* fallback banner tint    */
+  }
+  body.theme-dark{
+    --ink:#edf2f7;
+    --ink-soft:#b8c2cf;
+    --line:#303030;
+    --bar:#000;
+    --paper:#000;
+    --master:#86b9df;
+    --master-dark:#a9d2ef;
+    --accent:#86b9df;
+  }
+  body.theme-dark,body.theme-dark header,body.theme-dark main,body.theme-dark .card{ background:#000; }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:'Inter', system-ui, -apple-system, sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+
+  /* ---------------- nav ---------------- */
+  header{
+    position:sticky; top:0; z-index:10;
+    background:var(--bar);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    max-width:900px; margin:0 auto;
+    padding:0 32px;
+    height:64px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:24px;
+  }
+  .brand{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:1.15rem; font-weight:600;
+    color:var(--ink); letter-spacing:-.01em;
+  }
+  .brand:hover{ text-decoration:none; }
+  nav ul{
+    list-style:none; display:flex; align-items:center; gap:28px;
+  }
+  nav a{
+    color:var(--ink); font-size:.95rem; font-weight:500;
+  }
+  nav a:hover{ color:var(--accent); text-decoration:none; }
+  .search{
+    background:none; border:0; cursor:pointer;
+    color:var(--ink); display:flex; padding:4px;
+    border-radius:6px;
+  }
+  .search:hover{ color:var(--accent); }
+  .menu-toggle{ display:none; }
+  .theme-toggle{
+    width:32px; height:32px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    background:transparent;
+    color:var(--ink);
+    cursor:pointer;
+    font-size:1rem;
+    line-height:1;
+  }
+
+  /* ---------------- hero ---------------- */
+  .hero{
+    position:relative;
+    width:100%;
+    margin:0;
+    min-height:50vh;
+    display:flex; align-items:center;
+    padding:0 32px;
+    color:#fff;
+    background:rgba(0, 0, 0, 0.954);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .flow-field{
+    position:absolute;
+    inset:0;
+    width:100%; height:100%;
+    pointer-events:none;
+  }
+  .flow-legend{
+    position:absolute;
+    right:32px;
+    bottom:24px;
+    z-index:1;
+    display:grid;
+    gap:6px;
+    width:180px;
+    color:rgba(255,255,255,.88);
+    font-size:.72rem;
+    font-weight:600;
+    text-align:right;
+    text-shadow:none;
+  }
+  .flow-legend-bar{
+    height:6px;
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:999px;
+    background:rgba(255,255,255,.92);
+  }
+  .hero-inner{ position:relative; z-index:1; max-width:900px; width:100%; margin:0 auto; padding:56px 32px; }
+  .intro{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+    padding:0 0 32px;
+  }
+  .intro .avatar{
+    margin:0 0 -238px;
+    transform:translateY(-248px);
+  }
+  .intro p{
+    max-width:760px;
+    font-size:clamp(1.25rem, 3vw, 1.9rem);
+    font-weight:600;
+    line-height:1.3;
+  }
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+  }
+  .avatar{
+    display:block; width:236px; height:236px; margin-bottom:28px;
+    border-radius:50%; object-fit:cover;
+    background:rgba(255,255,255,.15);
+    border:4px solid rgba(255,255,255,.92);
+    box-shadow:0 12px 34px -12px rgba(0,0,0,.55);
+  }
+  .hero h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:clamp(2.6rem, 7vw, 5rem);
+    font-weight:700; letter-spacing:-.02em; line-height:1;
+    text-shadow:none;
+  }
+  .hero p{
+    margin-top:22px;
+    max-width:760px;
+    font-size:clamp(1.25rem, 3vw, 1.9rem);
+    font-weight:600; line-height:1.3;
+    text-shadow:none;
+  }
+
+  /* ---------------- card ---------------- */
+  .wrap{ width:100%; max-width:900px; margin:0 auto; padding:0 32px; }
+
+  main{ flex:1; }
+
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow:0 12px 40px -24px rgba(20,30,45,.35);
+    padding:40px 44px;
+    margin-top:0;
+    position:relative; z-index:2;
+  }
+  .card h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:1.5rem; font-weight:600; letter-spacing:-.01em;
+    color:var(--master-dark);
+    margin-bottom:16px;
+  }
+  .card > p{ color:var(--ink); font-size:1.05rem; max-width:70ch; }
+
+  .facts{ list-style:none; margin-top:22px; display:grid; gap:12px; }
+  .facts li{
+    display:flex; gap:10px; align-items:baseline;
+    font-size:1.02rem;
+  }
+  .facts .k{ font-weight:600; color:var(--ink); min-width:104px; }
+  .facts .v{ color:var(--ink-soft); }
+  .facts .v a{ font-weight:500; }
+
+  footer{
+    background:#000;
+    margin-top:80px;
+    padding:32px 0;
+    color:#fff; font-size:.9rem;
+  }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a{ color:#fff; }
+  body.theme-dark footer{ background:#000; color:#fff; }
+  body.theme-dark footer a{ color:#fff; }
+
+  /* ---------------- responsive ---------------- */
+  @media (max-width:720px){
+    .nav{ padding:0 20px; }
+    nav ul{
+      position:absolute; top:64px; left:0; right:0;
+      flex-direction:column; align-items:flex-start; gap:0;
+      background:var(--bar); border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; transition:max-height .25s ease;
+    }
+    nav ul.open{ max-height:340px; }
+    nav li{ width:100%; }
+    nav ul a{ display:block; padding:14px 20px; width:100%; border-top:1px solid var(--line); }
+    nav ul li:first-child a{ border-top:0; }
+    .menu-toggle{
+      display:flex; background:none; border:0; cursor:pointer;
+      flex-direction:column; gap:4px; padding:6px;
+    }
+    .menu-toggle span{ width:22px; height:2px; background:var(--ink); border-radius:2px; }
+    .theme-toggle{ margin-left:auto; }
+    .search{ display:none; }
+    .wrap, .hero-inner{ padding-left:20px; padding-right:20px; }
+    .flow-legend{ right:20px; bottom:18px; width:140px; }
+    .intro{ padding-top:0; }
+    .card{ padding:28px 22px; }
+    .facts .k{ min-width:auto; }
+    .facts li{ flex-direction:column; gap:2px; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    nav ul{ transition:none; }
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--accent); outline-offset:3px; border-radius:4px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">&#8767;</span>Teja Ala</a>
+
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav>
+      <ul id="menu">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">&#9790;</button>
+  </div>
+</header>
+
+<section class="hero">
+  <canvas class="flow-field" aria-hidden="true"></canvas>
+  <!-- <div class="flow-legend" aria-label="Arrow colours show flow direction; upward or downward flow is red.">
+    <span>Flow direction</span>
+    <span class="flow-legend-bar"></span>
+  </div> -->
+</section>
+
+<main class="wrap">
+  <section class="intro" aria-labelledby="intro-heading">
+    <h1 class="sr-only" id="intro-heading">Teja Ala</h1>
+    <!-- headshot lives at images/profile.png in your repo -->
+    <img class="avatar" src="/images/profile.png" alt="Teja Ala">
+    <p>Hello! I'm Teja, a modelling and simulation engineer</p>
+  </section>
+  <div class="card">
+    <!-- <h2>Contact and CV</h2> -->
+    <p>Feel free to check out my <a href="/cv_ta_2026_webpage.pdf" target="_blank" rel="noopener">CV</a> and my
+       <a href="https://www.linkedin.com/in/tejaala">LinkedIn</a> profile.</p>
+
+    <ul class="facts">
+      <!-- <li><span class="k">Email</span><span class="v"><a href="mailto:dekeract01@icloud.com">dekeract01@icloud.com</a></span></li> -->
+      <!-- <li><span class="k">Based in</span><span class="v">Milton Keynes, United Kingdom</span></li> -->
+      <!-- <li><span class="k">Affiliation</span><span class="v">University of Southampton</span></li> -->
+      <!-- <li><span class="k">ORCID</span><span class="v"><a href="https://orcid.org/0000-0002-8337-6702">0000-0002-8337-6702</a></span></li> -->
+      <!-- <li><span class="k">GitHub</span><span class="v"><a href="https://github.com/dekeract01">@dekeract01</a></span></li> -->
+      <!-- LinkedIn omitted here — already linked in the intro line above -->
+      <!-- <li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/tejaala">in/tejaala</a></span></li> -->
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Teja Ala</span>
+    <span><a href="https://github.com/dekeract01">GitHub</a> · <a href="/feed.xml">Feed</a></span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('menu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+
+  const themeButton = document.querySelector('.theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') document.body.classList.add('theme-dark');
+  if (document.body.classList.contains('theme-dark')) {
+    themeButton.setAttribute('aria-label', 'Switch to light mode');
+    themeButton.setAttribute('title', 'Switch to light mode');
+  }
+  themeButton.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('theme-dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    themeButton.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    themeButton.setAttribute('title', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+  });
+
+  const hero = document.querySelector('.hero');
+  const canvas = document.querySelector('.flow-field');
+  const context = canvas.getContext('2d');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  // Adjust these values to change how long the cursor's flow disturbance remains visible.
+  const FLOW_HOLD_MS = 5400;
+  const FLOW_SAMPLE_INTERVAL_MS = 45;
+  const disturbances = [];
+  let width = 0;
+  let height = 0;
+  let animationFrame = null;
+  let lastSampleTime = 0;
+
+  function resizeFlowField() {
+    const bounds = hero.getBoundingClientRect();
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    width = bounds.width;
+    height = bounds.height;
+    canvas.width = Math.round(width * pixelRatio);
+    canvas.height = Math.round(height * pixelRatio);
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    drawFlowField(0);
+  }
+
+  function drawArrow(x, y, angle, length, color) {
+    const endX = x + Math.cos(angle) * length;
+    const endY = y + Math.sin(angle) * length;
+    context.beginPath();
+    context.moveTo(x, y);
+    context.lineTo(endX, endY);
+    context.strokeStyle = color;
+    context.stroke();
+  }
+
+  function drawFlowField(timestamp) {
+    const spacing = width < 720 ? 19 : 16;
+    const length = width < 720 ? 8 : 10;
+    const radius = Math.min(190, width * .28);
+    const currentTime = timestamp || performance.now();
+    const time = currentTime * .0005;
+
+    context.clearRect(0, 0, width, height);
+    context.lineWidth = .85;
+    for (let y = spacing / 2; y < height; y += spacing) {
+      for (let x = spacing / 2; x < width; x += spacing) {
+        const baseX = 1;
+        const baseY = .16 * Math.sin(y * .025 + time);
+        let flowX = baseX;
+        let flowY = baseY;
+
+        for (const disturbance of disturbances) {
+          const age = (currentTime - disturbance.created) / FLOW_HOLD_MS;
+          const strength = Math.max(0, 1 - age) ** 2;
+          const deltaX = x - disturbance.x;
+          const deltaY = y - disturbance.y;
+          const distance = Math.hypot(deltaX, deltaY) || 1;
+          const influence = Math.max(0, 1 - distance / radius) ** 2 * strength;
+          flowX += -deltaY / distance * influence * 1.5;
+          flowY += deltaX / distance * influence * 1.5;
+        }
+
+        const angle = Math.atan2(flowY, flowX);
+        const turn = Math.abs(Math.sin(angle));
+        const hue = 215 - 35 * Math.sin(angle);
+        const saturation = turn * 78;
+        const lightness = 96 - turn * 32;
+        drawArrow(x, y, angle, length, `hsl(${hue}, ${saturation}%, ${lightness}%)`);
+      }
+    }
+  }
+
+  function animateFlowField(timestamp) {
+    while (disturbances.length && timestamp - disturbances[0].created > FLOW_HOLD_MS) {
+      disturbances.shift();
+    }
+    drawFlowField(timestamp);
+
+    if (disturbances.length) {
+      animationFrame = window.requestAnimationFrame(animateFlowField);
+    } else {
+      animationFrame = null;
+      drawFlowField(0);
+    }
+  }
+
+  function startFlowAnimation() {
+    if (!reduceMotion.matches && !animationFrame) {
+      animationFrame = window.requestAnimationFrame(animateFlowField);
+    }
+  }
+
+  hero.addEventListener('pointermove', (event) => {
+    const bounds = hero.getBoundingClientRect();
+    const now = performance.now();
+    if (now - lastSampleTime >= FLOW_SAMPLE_INTERVAL_MS) {
+      disturbances.push({ x: event.clientX - bounds.left, y: event.clientY - bounds.top, created: now });
+      lastSampleTime = now;
+      startFlowAnimation();
+    }
+  });
+
+  window.addEventListener('resize', resizeFlowField);
+  resizeFlowField();
+</script>
+
+</body>
+</html>

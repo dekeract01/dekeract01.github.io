@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Teja Ala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<header><div class="nav"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">&#8767;</span>Teja Ala</a><button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button><nav><ul id="menu"><li><a href="/about/">About</a></li><li><a href="/research/">Research</a></li><li><a href="/blog/">Blog</a></li><li><a href="/projects/">Projects</a></li><li><a href="/contact/" aria-current="page">Contact</a></li></ul></nav><button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">&#9790;</button></div></header>
+<main class="wrap"><article class="card"><h1>Contact</h1><p>For professional enquiries, please get in touch by email or through LinkedIn.</p><ul class="facts"><li><span class="k">Primary email</span><span class="v"><a href="mailto:dekeract01@icloud.com">dekeract01@icloud.com</a></span></li><li><span class="k">Work email</span><span class="v"><a href="mailto:t.ala@soton.ac.uk">t.ala@soton.ac.uk</a></span></li><li><span class="k">Based in</span><span class="v">Milton Keynes, United Kingdom</span></li><li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/tejaala">linkedin.com/in/tejaala</a></span></li><li><span class="k">GitHub</span><span class="v"><a href="https://github.com/dekeract01">@dekeract01</a></span></li></ul><section class="pgp-key" aria-labelledby="pgp-heading"><div class="pgp-heading"><h2 id="pgp-heading">PGP Key</h2><button class="copy-key" type="button" data-copy-target="pgp-key" aria-label="Copy PGP public key">Copy</button></div><pre id="pgp-key">-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEal00gRYJKwYBBAHaRw8BAQdAVxaPclGIsBC5UuOoToiItw9Eswwnk4P8nqwv
+O8fcLGO0OWdhbGFjdHVzMDUgKHlvdSBrbm93IHdobyB0aGlzIGlzKSA8ZGVrZXJh
+Y3QwMUBpY2xvdWQuY29tPoivBBMWCgBXFiEE/SOjKnSq+H5bde4VVIcVyAxjcv4F
+AmpdNIEbFIAAAAAABAAObWFudTIsMi41KzEuMTIsMCwzAhsDBQsJCAcCAiICBhUK
+CQgLAgQWAgMBAh4HAheAAAoJEFSHFcgMY3L+KkkBAM/JWG0Eta75L6cgvE+Jp604
+Hk3OfZkFiyvClfI08mtrAQC3ZwMaCx0nN/vvzIrenT1XspyUrvoBukphB4VOGE7m
+Drg4BGpdNIESCisGAQQBl1UBBQEBB0CLHvdgPF2yYMKNo1/8hT4BDypAymYIvUBC
+DY1TNc1OPgMBCAeIlAQYFgoAPBYhBP0joyp0qvh+W3XuFVSHFcgMY3L+BQJqXTSB
+GxSAAAAAAAQADm1hbnUyLDIuNSsxLjEyLDAsMwIbDAAKCRBUhxXIDGNy/q14AP4i
+EuxgjyOiN/9qLkbjlY6Sxuyu6ZbO+k7uHHvz24Kl1AEAmdXUPRL4v5dXt6P8Z3Ua
+hRfMTQAzErIWfvyQ6zAi6wE=
+=5hSZ
+-----END PGP PUBLIC KEY BLOCK-----</pre><dl class="key-details"><div><dt>Key ID</dt><dd>FD23A32A74AAF87E5B75EE15548715C80C6372FE</dd></div><div><dt>Algorithm</dt><dd>ed25519</dd></div><div><dt>Expires</dt><dd>11 February 2027</dd></div></dl></section></article></main>
+<footer><div class="wrap"><span>© 2026 Teja Ala</span><span><a href="https://github.com/dekeract01">GitHub</a> · <a href="/feed.xml">Feed</a></span></div></footer>
+<script>const toggle=document.querySelector('.menu-toggle');const menu=document.getElementById('menu');toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',open);});const themeButton=document.querySelector('.theme-toggle');if(localStorage.getItem('theme')==='dark')document.body.classList.add('theme-dark');if(document.body.classList.contains('theme-dark')){themeButton.setAttribute('aria-label','Switch to light mode');themeButton.setAttribute('title','Switch to light mode');}themeButton.addEventListener('click',()=>{const isDark=document.body.classList.toggle('theme-dark');localStorage.setItem('theme',isDark?'dark':'light');themeButton.setAttribute('aria-label',`Switch to ${isDark?'light':'dark'} mode`);themeButton.setAttribute('title',`Switch to ${isDark?'light':'dark'} mode`);});const copyButton=document.querySelector('.copy-key');copyButton.addEventListener('click',async()=>{const key=document.getElementById(copyButton.dataset.copyTarget).textContent;await navigator.clipboard.writeText(key);copyButton.textContent='Copied';setTimeout(()=>{copyButton.textContent='Copy';},1600);});</script>
+</body>
+</html>
