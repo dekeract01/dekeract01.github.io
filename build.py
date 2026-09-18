@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Build the site's HTML pages from content/ + templates/base.html.
+"""Build the site's published pages (docs/) from content/ + templates/base.html.
+
+docs/ is the only folder GitHub Pages serves (repo Settings -> Pages -> Source
+is set to the docs/ folder). Never hand-edit files under docs/ -- they are
+regenerated from content/ every time this script runs and any direct edit
+will be silently overwritten on the next build.
 
 No dependencies beyond the Python standard library. Run it after editing
 anything under content/, then commit and push as usual:
@@ -8,7 +13,10 @@ anything under content/, then commit and push as usual:
 
 See content/blog/_template.html and content/projects/_template.html for
 how to add a new post or project. See content/pages/*.html to edit the
-About, Contact, Research, Blog intro, or Projects intro copy.
+About, Contact, Research, Blog intro, or Projects intro copy. Static assets
+that are not generated (page.css, images/, favicons, the CV PDF, the
+hand-authored docs/index.html homepage) live directly under docs/ and are
+edited there directly.
 """
 
 from datetime import datetime
@@ -16,6 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content"
+DOCS = ROOT / "docs"
 BASE_TEMPLATE = (ROOT / "templates" / "base.html").read_text()
 
 NAV_ITEMS = [
@@ -138,19 +147,19 @@ def build_listing_page(kind, active_nav, out_path, card_extra=None):
     write(out_path, render_page(page_meta["title"], content, active_nav))
 
     for meta in entries:
-        build_entry_page(kind, meta, active_nav, ROOT / kind / f'{meta["slug"]}.html')
+        build_entry_page(kind, meta, active_nav, DOCS / kind / f'{meta["slug"]}.html')
 
 
 def main():
-    build_simple_page("about", "About", ROOT / "about" / "index.html")
-    build_simple_page("contact", "Contact", ROOT / "contact" / "index.html")
-    build_simple_page("research", "Research", ROOT / "research" / "index.html")
+    build_simple_page("about", "About", DOCS / "about" / "index.html")
+    build_simple_page("contact", "Contact", DOCS / "contact" / "index.html")
+    build_simple_page("research", "Research", DOCS / "research" / "index.html")
 
-    build_listing_page("blog", "Blog", ROOT / "blog" / "index.html")
+    build_listing_page("blog", "Blog", DOCS / "blog" / "index.html")
     build_listing_page(
         "projects",
         "Projects",
-        ROOT / "projects" / "index.html",
+        DOCS / "projects" / "index.html",
         card_extra=lambda meta: f'<p class="project-card-year">{meta["first_published"][:4]}</p>',
     )
 
