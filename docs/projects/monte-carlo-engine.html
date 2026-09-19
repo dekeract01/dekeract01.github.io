@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wave Equation Solver Benchmarks | Teja Ala</title>
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/page.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">Teja Ala</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav>
+        <ul id="menu">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/research/">Research</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/projects/" aria-current="page">Projects</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">&#9790;</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="card post">
+      <h1>Wave Equation Solver Benchmarks</h1>
+
+      <section class="post-meta" aria-label="Project details">
+        <dl>
+          <div>
+            <dt>First published</dt>
+            <dd><time datetime="2025-12-12">12 December 2025</time></dd>
+          </div>
+          <div>
+            <dt>Last updated</dt>
+            <dd><time datetime="2026-08-02">2 August 2026</time></dd>
+          </div>
+          <div>
+            <dt>Repository</dt>
+            <dd><a href="https://github.com/dekeract01/wavebench">Wave Equation Benchmarks</a></dd>
+          </div>
+        </dl>
+      </section>
+
+      <p>Lately I've been working on a Monte Carlo simulation engine in modern C++. I wanted to see how
+      it's done, whether I could make it properly versatile, and to really understand Monte Carlo
+      methods: how they work, why they converge, and how to make them fast and trustworthy.</p>
+
+      <p>For anyone new to it, the idea behind Monte Carlo is simple. You simulate a random outcome, do it
+            lots of times, and average the results. I've tried to build the engine to be completely general,
+            so you can slap it on pretty much anything. If you can write your problem as "simulate one
+            random outcome and give me a number", it plugs straight in, and the engine takes care of the
+            rest: generating the randomness, running the samples and crunching the statistics. Every answer
+            also comes with its own error bar, so you always know how much to trust it.</p>
+
+      <p>The core is up and running. At its heart is a fast random number generator which, I'll be
+            honest, isn't actually random. It's a perfectly predictable formula doing a very convincing
+            impression of randomness. I did something similar a few years back, generating random numbers
+            on GPUs to introduce random disturbances into a boundary-layer simulation, mimicking the effect
+            of atmospheric disturbances.</p>
+
+      <p>Real randomness has to come from something physical. Your processor actually has a source built
+            in, based on tiny fluctuations in its electronics, and there are services like
+            <a href="https://www.random.org">random.org</a> that generate random numbers from atmospheric
+            noise. Quantum mechanics is the gold standard, since some quantum events are believed to be
+            fundamentally unpredictable. People have even used a quantum computer to generate certified
+            random numbers, with some of the world's biggest supercomputers needed just to check the
+            results. That's a wonderfully expensive way to flip a coin. If you're interested in that side
+            of things, random.org goes into it in real depth, and
+            <a href="https://www.youtube.com/watch?v=aEJB8IAMMpA">this Computerphile video</a> is a great
+            watch too.</p>
+
+      <p>For simulation, though, faking it is actually the better option. It's much faster, and the same
+            seed gives exactly the same results every time, which makes debugging far less painful. The
+            one place real randomness is handy is picking that starting seed.</p>
+
+      <p>Add in some stable statistics and an estimator that always reports its own uncertainty, and
+            you've got the foundations. For a first sanity check, I got it to estimate &pi;, and it behaves
+            exactly as the textbooks say it should. The error shrinks as 1/&radic;N, and the 95% confidence
+            intervals contain the true value 95% of the time. That last bit is the one I'm happiest with,
+            because it shows the error bars are actually honest, not just that the answer happens to be
+            close.</p>
+
+      <p>To prove it really does work on anything, I'm trying it out on three completely unrelated
+            problems, each with a known answer I can check against:</p>
+
+      <p><strong>Trajectory uncertainty.</strong> If you're not quite sure of the launch angle, speed,
+            drag or wind, where will something actually land? The engine tries thousands of plausible
+            combinations, solves the equations of motion for each one, and builds up the spread of possible
+            landing spots. I'm checking the solver against the exact no-drag solution first.</p>
+
+      <p><strong>Option pricing.</strong> An option's fair price is its average payoff across loads of
+            possible market paths. I'm using Multilevel Monte Carlo, a neat trick that does most of the
+            work on cheap, rough simulations and then tidies up with a few detailed ones. The answers get
+            checked against the exact Black&ndash;Scholes formula.</p>
+
+      <p><strong>Error-correction thresholds.</strong> Error-correcting codes only protect information if
+            the error rate stays below a certain tipping point. The engine throws random errors at a code,
+            runs a decoder, and counts how often it fails at different code sizes. The threshold shows up
+            where those failure curves cross, and I can compare it with published values.</p>
+
+      <p>Three different fields, one engine underneath. I haven't made the branch public just yet, but
+            I'm hoping to in the next few days, so keep an eye out. I'll post results and code here as each
+            bit comes together.</p>
+
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Teja Ala</span>
+      <span><a href="https://github.com/dekeract01">GitHub</a> · <a href="/feed.xml">Feed</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    const themeButton = document.querySelector('.theme-toggle');
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme-dark');
+    if (document.body.classList.contains('theme-dark')) {
+      themeButton.setAttribute('aria-label', 'Switch to light mode');
+      themeButton.setAttribute('title', 'Switch to light mode');
+    }
+    themeButton.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('theme-dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      themeButton.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+      themeButton.setAttribute('title', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    });
+
+    const copyButton = document.querySelector('.copy-key');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const key = document.getElementById(copyButton.dataset.copyTarget).textContent;
+        await navigator.clipboard.writeText(key);
+        copyButton.textContent = 'Copied';
+        setTimeout(() => { copyButton.textContent = 'Copy'; }, 1600);
+      });
+    }
+  </script>
+
+</body>
+</html>
