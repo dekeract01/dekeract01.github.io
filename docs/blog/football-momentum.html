@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can a Computer See Momentum? | Teja Ala</title>
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/page.css">
+  <style>
+    .post figure { margin: 1.75rem 0; }
+    .post figure img { display: block; max-width: 100%; height: auto; border-radius: 6px; }
+    .post figcaption { margin-top: 0.5rem; font-size: 0.9em; opacity: 0.8; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">Teja Ala</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav>
+        <ul id="menu">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/research/">Research</a></li>
+          <li><a href="/blog/" aria-current="page">Blog</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">&#9790;</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="card post">
+      <h1>Can a Computer See Momentum?</h1>
+
+      <section class="post-meta" aria-label="Project details">
+        <dl>
+          <div>
+            <dt>First published</dt>
+            <dd><time datetime="2026-09-23">23 September 2026</time></dd>
+          </div>
+          <div>
+            <dt>Last updated</dt>
+            <dd><time datetime="2026-09-25">25 September 2026</time></dd>
+          </div>
+          <div>
+            <dt>Repository</dt>
+            <dd><a href="https://github.com/dekeract01/football-momentum">Football Momentum</a></dd>
+          </div>
+        </dl>
+      </section>
+
+      <p>I found something interesting while watching the World Cup this summer. Every so often the
+      broadcast would flash up a "momentum" graph, swinging back and forth between the two teams, and
+      it kept me thinking: how do you even go about calculating that? As a fan, I can feel when a team
+      has momentum. But when my friends and I started talking about the data behind it, we couldn't
+      agree on what it actually means. How does a computer know which team is on top? And how would
+      you work it out in real time?</p>
+
+      <p>So, naturally, I went looking for data. I saw that StatsBomb publishes match data, but
+      unfortunately I could only find it for the 2022 World Cup, so 2022 it is. If the 2026 data does
+      get released, I'm hoping to run the same scripts on it. Here's what's in there:</p>
+
+      <ul>
+        <li>every pass, carry, shot and press</li>
+        <li>where on the pitch each one happened</li>
+        <li>a timestamp down to the second</li>
+        <li>around 235,000 events across the 64 matches</li>
+      </ul>
+
+      <h2>So what actually is momentum?</h2>
+
+      <p>The first surprise (shocker, I know) was that there's no single answer. I ended up with five
+      families of measure:</p>
+
+      <ul>
+        <li><strong>Territory:</strong> who has the ball, and where</li>
+        <li><strong>Threat:</strong> how dangerous that possession actually is</li>
+        <li><strong>Intensity:</strong> how hard each team is pressing</li>
+        <li><strong>Dynamics:</strong> whether being on top makes you more likely to stay on top</li>
+        <li><strong>Outcomes:</strong> what happens after a goal</li>
+      </ul>
+
+      <p>For threat, I leaned on expected goals (xG), which gives every shot a probability of going
+      in based on where and how it was taken. Shots are rare, though, so I also built a possession
+      value model that scores every pass and carry by how much closer it brings a team to scoring.
+      That's roughly what the broadcast graphs are doing behind the scenes.</p>
+
+      <figure>
+        <img src="https://raw.githubusercontent.com/dekeract01/football-momentum/main/figures/2_xt_surface.png" alt="Heatmap of the pitch showing expected threat, the chance of scoring within a few actions from each zone. It is near zero across most of the pitch and rises sharply in front of goal.">
+        <figcaption>How valuable the ball is, depending on where you have it. Almost everything is
+        packed into a few squares right in front of goal.</figcaption>
+      </figure>
+
+      <p>Here's the fun bit: the measures don't always agree. Possession barely tracks how dangerous
+      a team actually is, so "who's on top" depends heavily on how you choose to measure it. I'll be
+      honest, that settled a few arguments with my mates.</p>
+
+      <figure>
+        <img src="https://raw.githubusercontent.com/dekeract01/football-momentum/main/figures/3_definition_agreement.png" alt="Grid of correlations between six momentum measures across all 64 matches: possession, field tilt, xT added, xG, pressures and high recoveries.">
+        <figcaption>Do the measures agree? Only loosely. Possession and xG correlate at just 0.26,
+        and teams with more of the ball press less.</figcaption>
+      </figure>
+
+      <h2>But what about the result?</h2>
+
+      <p>We all know that at the end of the day, the outcome is what matters. So what if I pick some
+      other games? I support England, so of course I went straight for our quarter-final against
+      France. I know it was only the quarter-finals, but I still remember that gut-wrenching
+      feeling.</p>
+
+      <p>On paper, England were the better side. We had 57% of the passes, twice as many shots
+      (16 to 8) and nearly three times the expected goals (2.35 to 0.84). And we still lost 2-1,
+      with Kane's second penalty flying over late on. The painful twist is that most of our xG came
+      from those two penalties. Take them out, and the two sides were almost level on chances (0.79
+      to 0.84). So England had more of the ball, but France made theirs count. Which is, I suppose,
+      the whole point.</p>
+
+      <figure>
+        <img src="https://raw.githubusercontent.com/dekeract01/football-momentum/main/figures/1b_england_france_dashboard.png" alt="Five panels tracking possession, field tilt, expected goals, possession value and pressing through England's 2-1 defeat to France in the 2022 World Cup quarter-final, with goals marked.">
+        <figcaption>England 1-2 France. Plenty of the ball, two big xG spikes from the penalties,
+        and still going home.</figcaption>
+      </figure>
+
+      <p>Put it all into a single broadcast-style momentum graph and the story's even clearer.
+      France had a spell on top before Tchouam&eacute;ni's screamer, then England were on top for
+      most of the match. France had one short, sharp burst, and Giroud scored from it.</p>
+
+      <figure>
+        <img src="https://raw.githubusercontent.com/dekeract01/football-momentum/main/figures/7_england_france_momentum.png" alt="Momentum graph for England against France: bars above the line in red when England are on top, below the line in blue when France are, with goals and Kane's missed penalty marked.">
+        <figcaption>Who had the momentum? Red means England were on top, blue means France were.
+        England had it for most of the game, and France still won.</figcaption>
+      </figure>
+
+      <h2>Testing it at the World Cup</h2>
+
+      <p>Here's the catch with those broadcast graphs. They always swing about, but so does pure
+      randomness. Flip a coin enough times and you'll get streaks that look an awful lot like
+      momentum too. So the real question isn't whether the graph moves, it's whether momentum
+      predicts anything.</p>
+
+      <p>This is where Monte Carlo comes in. I simulated 2,000 tournaments in a world with no
+      momentum at all, where every team keeps the same number of shots but they're scattered at
+      random through the match, and compared them with the real thing. The real data looks just like
+      the simulated ones. In the real World Cup, 43.6% of a team's shots came within five minutes of
+      its previous one, right in the middle of what the no-momentum world gives you (p = 0.53). And a
+      team's threat in one minute tells you very little about the next few.</p>
+
+      <figure>
+        <img src="https://raw.githubusercontent.com/dekeract01/football-momentum/main/figures/4_shot_clustering_null.png" alt="Histogram of 2,000 simulated tournaments with no momentum, with the real World Cup value marked by a red line right in the middle of the distribution.">
+        <figcaption>Real shots (red line) cluster about as much as randomly timed ones (grey).
+        Nothing to see here.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://raw.githubusercontent.com/dekeract01/football-momentum/main/figures/5_threat_autocorrelation.png" alt="Autocorrelation of threat per minute at lags of 1 to 15 minutes, staying inside a green band that shows what shuffled, memoryless minutes would give.">
+        <figcaption>Does threat persist? The red line never leaves the green band, so a team's
+        threat in one minute says nothing about the next few.</figcaption>
+      </figure>
+
+      <p>Goals do change matches, just not in the way you'd expect. Lining up all 169 goals from the
+      tournament, teams tend to sit back after scoring, and the team that's just conceded pushes
+      forward. That's pretty much the opposite of
+      "a goal gives you momentum".</p>
+
+      <figure>
+        <img src="https://raw.githubusercontent.com/dekeract01/football-momentum/main/figures/6_goal_event_study.png" alt="Average threat of the scoring and conceding teams in the 15 minutes either side of a goal, across 169 goals.">
+        <figcaption>169 goals lined up at minute zero. The scoring team drops off afterwards and
+        the team that conceded pushes on.</figcaption>
+      </figure>
+
+      <h2>Ranking teams over a season</h2>
+
+      <p>The one thing I started getting curious about was applying all this to the Premier League.
+      Momentum is about minutes, but quality is about seasons. The most recent full Premier League
+      season in the free data is 2015/16, which was an outlier season in its own right: Leicester
+      won the league at 5000-1. So I ranked all 20 teams on the same metrics.</p>
+
+      <p>Expected goals does a great job of predicting the table, with a correlation of 0.87 with
+      points. Possession, not so much. Manchester United had more of the ball than anyone, yet
+      ranked only 11th for chances created. And yes, Leicester are sitting right at the top as the
+      biggest outlier of the lot.</p>
+
+      <figure>
+        <img src="https://raw.githubusercontent.com/dekeract01/football-momentum/main/figures/pl_points_vs_xg.png" alt="Scatter plot of Premier League 2015/16 points against non-penalty expected goals difference, with each team labelled and a fitted trend line.">
+        <figcaption>Points against underlying performance. Teams above the line got more out of
+        their chances than you'd expect, and teams below it got less.</figcaption>
+      </figure>
+
+      <h2>What's next</h2>
+
+      <p>There's a sneaky problem with doing any of this in real time. A live system can only use
+      what's already happened, whereas most of my smoothing so far quietly peeks at the minutes
+      after each point as well. Fine for looking back at a finished match, but no good for a live
+      graph. The momentum graph above is a first step, since it only looks backwards. The next step
+      is a properly forward-looking model. I'm planning a self-exciting (Hawkes) process, where each
+      dangerous attack briefly raises the chance of another one, a no-momentum baseline that
+      accounts for the scoreline, and a much bigger dataset, to see whether there's a real but
+      subtle momentum effect hiding in there after all.</p>
+
+      <p>The code is now up on <a href="https://github.com/dekeract01/football-momentum">GitHub</a>,
+      including a notebook that walks through every step and makes all the figures above. I'll post
+      results here as each bit comes together, so keep an eye out.</p>
+
+      <p><small>Data: <a href="https://github.com/statsbomb/open-data">StatsBomb open data</a>. Built with help from Claude (Anthropic).</small></p>
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Teja Ala</span>
+      <span><a href="https://github.com/dekeract01">GitHub</a> · <a href="/feed.xml">Feed</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    const themeButton = document.querySelector('.theme-toggle');
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme-dark');
+    if (document.body.classList.contains('theme-dark')) {
+      themeButton.setAttribute('aria-label', 'Switch to light mode');
+      themeButton.setAttribute('title', 'Switch to light mode');
+    }
+    themeButton.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('theme-dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      themeButton.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+      themeButton.setAttribute('title', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    });
+  </script>
+
+</body>
+</html>
