@@ -174,7 +174,6 @@
         the team that conceded pushes on.</figcaption>
       </figure>
 
-
       <h2>What's next</h2>
 
       <p>There's a sneaky problem with doing any of this in real time. A live system can only use
@@ -184,7 +183,8 @@
       is a properly forward-looking model. I'm planning a self-exciting (Hawkes) process, where each
       dangerous attack briefly raises the chance of another one, a no-momentum baseline that
       accounts for the scoreline, and a much bigger dataset, to see whether there's a real but
-      subtle momentum effect hiding in there after all.</p>
+      subtle momentum effect hiding in there after all. After that, I'd like to try the same
+      approach on a full Premier League season, where there's far more data to unpack.</p>
 
       <p>The code is now up on <a href="https://github.com/dekeract01/football-momentum">GitHub</a>,
       including a notebook that walks through every step and makes all the figures above. I'll post
