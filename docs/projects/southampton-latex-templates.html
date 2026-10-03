@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Southampton LaTeX Templates | Teja Ala</title>
+  <meta name="description" content="University of Southampton LaTeX templates: PhD thesis template with combined glossary and hyperlinked symbols, Beamer presentation template, conference poster and report templates.">
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/page.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">Teja Ala</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav>
+        <ul id="menu">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/research/">Research</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/projects/" aria-current="page">Projects</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">&#9790;</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="card post">
+      <h1>Southampton LaTeX Templates</h1>
+
+      <section class="post-meta" aria-label="Project details">
+        <dl>
+          <div>
+            <dt>First published</dt>
+            <dd><time datetime="2024-07-24">24 July 2024</time></dd>
+          </div>
+          <div>
+            <dt>Last updated</dt>
+            <dd><time datetime="2026-10-03">3 October 2026</time></dd>
+          </div>
+          <div>
+            <dt>Repository</dt>
+            <dd><a href="https://github.com/dekeract01/sotonlatex">sotonlatex</a></dd>
+          </div>
+        </dl>
+      </section>
+
+      <p>A collection of University of Southampton LaTeX templates I put together in 2024: a PhD thesis
+      template, a Beamer presentation template, a conference poster template and a short report template.
+      Each one lives in its own folder and compiles on its own, and they all upload straight to Overleaf.</p>
+
+      <p>I wrote these to make my own life easier. The poster and Beamer templates share the same
+      underlying style, with the same colours, fonts and Southampton branding, so I only had to keep one
+      figures folder and could move content between a talk and a poster. The only real rework was resizing
+      figures for the aspect ratio or the width of the slide or page.</p>
+
+      <h2>The thesis template</h2>
+
+      <p>The thesis template follows the standard Southampton thesis layout, with the university crest on
+      the title page and the traditional front matter. On top of that it uses the <code>glossaries</code>
+      package to build lists automatically: acronyms, non-dimensional numbers (Reynolds, Mach, Prandtl and
+      so on) and mathematical symbols. Only entries you actually use end up in the final lists, so they stay
+      in sync as chapters come and go.</p>
+
+      <p>The final version of the thesis template I actually built for a friend. They wanted the glossary
+      and the list of symbols combined, so every symbol behaves like a normal glossary entry. It took me a
+      couple of days to get right, but it's quite a nifty thing: you can hyperlink pretty much every symbol
+      in the thesis, just like <code>\gls</code> does for a glossary term, so clicking a symbol in an equation
+      takes you straight to its definition and units.</p>
+
+      <h2>Using them</h2>
+
+      <p>The easiest way is to upload the folder you need to Overleaf as a new project, which handles the
+      glossary and bibliography passes for you. Locally they build with <code>pdflatex</code>; the Beamer
+      template needs TeX Live 2023 or later. Everything is in the
+      <a href="https://github.com/dekeract01/sotonlatex">GitHub repository</a> under the MIT licence
+      (university logos and branding excluded), and feel free to <a href="/contact/">get in touch</a> if
+      you'd like me to share them with you directly on Overleaf.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Teja Ala</span>
+      <span><a href="https://github.com/dekeract01">GitHub</a> · <a href="/feed.xml">Feed</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    const themeButton = document.querySelector('.theme-toggle');
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme-dark');
+    if (document.body.classList.contains('theme-dark')) {
+      themeButton.setAttribute('aria-label', 'Switch to light mode');
+      themeButton.setAttribute('title', 'Switch to light mode');
+    }
+    themeButton.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('theme-dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      themeButton.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+      themeButton.setAttribute('title', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    });
+
+    const copyButton = document.querySelector('.copy-key');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const key = document.getElementById(copyButton.dataset.copyTarget).textContent;
+        await navigator.clipboard.writeText(key);
+        copyButton.textContent = 'Copied';
+        setTimeout(() => { copyButton.textContent = 'Copy'; }, 1600);
+      });
+    }
+  </script>
+
+</body>
+</html>
