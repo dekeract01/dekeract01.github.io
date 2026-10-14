@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linux Setup | Teja Ala</title>
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/page.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">Teja Ala</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav>
+        <ul id="menu">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/research/">Research</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/projects/" aria-current="page">Projects</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">&#9790;</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="card post">
+      <h1>Linux Setup</h1>
+
+      <section class="post-meta" aria-label="Project details">
+        <dl>
+          <div>
+            <dt>First published</dt>
+            <dd><time datetime="2022-02-20">20 February 2022</time></dd>
+          </div>
+          <div>
+            <dt>Last updated</dt>
+            <dd><time datetime="2026-10-15">15 October 2026</time></dd>
+          </div>
+          <div>
+            <dt>Repository</dt>
+            <dd><a href="https://github.com/dekeract01/linux-setup">linux-setup</a></dd>
+          </div>
+        </dl>
+      </section>
+
+      <p>Every time I install Linux on a new machine, there's the same afternoon of setting
+      everything up again. Installing the same software, removing the same apps I never use,
+      setting up git, ssh keys, the firewall, VS Code. So I wrote a script to do it all for me.</p>
+
+      <p>My distro of choice has been Fedora ever since my first year of uni. I only found out
+      later on how big Red Hat Enterprise Linux actually is, and that Fedora is basically where
+      RHEL starts out. Loads of servers and HPC clusters run on the RHEL family, so it turns out
+      I'd been getting used to it without really meaning to.</p>
+
+      <p>The idea came from my friend Matt, who wrote
+      <a href="https://gitlab.com/mjrhudson/matts-setup-and-config-files">his own setup scripts</a>
+      for openSUSE. I took inspiration from his and wrote one for Fedora first. Then I ended up
+      looking after my supervisor's server, which ran the original version of OpenSBLI, so I made
+      a version for that machine too, and that's the one that went up on GitHub back in February
+      2022. I made one for macOS at the same time.</p>
+
+      <p>Coming back to it now, I've cleaned them all up properly and put all three in the same
+      repo. Each one is broken into steps, and you switch them on or off at the top of the script,
+      or just run the ones you want.</p>
+
+      <p>The bit I like most is how little you actually have to do. On a fresh install you don't
+      even need git. Just grab the repo with curl (or wget), have a quick look at the settings at
+      the top of the script, and run it:</p>
+
+      <pre><code>curl -fsSL https://github.com/dekeract01/linux-setup/archive/refs/heads/main.tar.gz | tar -xz
+cd linux-setup-main
+./linux/setup/setup_fedora.sh</code></pre>
+
+      <p>I've always liked automating things, and this is one of those small ones that saves a
+      surprising amount of time. Install the OS, run one script, go make a cup of tea.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Teja Ala</span>
+      <span><a href="https://github.com/dekeract01">GitHub</a> · <a href="/feed.xml">Feed</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    const themeButton = document.querySelector('.theme-toggle');
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme-dark');
+    if (document.body.classList.contains('theme-dark')) {
+      themeButton.setAttribute('aria-label', 'Switch to light mode');
+      themeButton.setAttribute('title', 'Switch to light mode');
+    }
+    themeButton.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('theme-dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      themeButton.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+      themeButton.setAttribute('title', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    });
+
+    const copyButton = document.querySelector('.copy-key');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const key = document.getElementById(copyButton.dataset.copyTarget).textContent;
+        await navigator.clipboard.writeText(key);
+        copyButton.textContent = 'Copied';
+        setTimeout(() => { copyButton.textContent = 'Copy'; }, 1600);
+      });
+    }
+  </script>
+
+</body>
+</html>
