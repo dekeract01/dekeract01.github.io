@@ -30,7 +30,24 @@
 
   const EXAMPLES = {
     square: 'repeat 4 [forward 100 right 90]',
-    flower: 'repeat 36 [repeat 4 [forward 100 right 90] right 10]',
+    spin: 'repeat 36 [repeat 4 [forward 100 right 90] right 10]',
+    flower: [
+      'to petal',
+      '  repeat 2 [repeat 18 [forward 4 right 5] right 90]',
+      'end',
+      '',
+      'to flower',
+      '  repeat 12 [petal right 30]',
+      'end',
+      '',
+      'penup forward 40 pendown',
+      'setpencolor 10 setpensize 3',
+      'back 150',
+      'forward 50 petal left 90 petal right 90',
+      'forward 100',
+      'setpencolor "deeppink setpensize 2',
+      'flower',
+    ].join('\n'),
     star: 'penup setxy -25 -90 pendown\nsetpencolor "orange\nrepeat 5 [forward 180 right 144]',
     spiral: [
       'to spiral :size',

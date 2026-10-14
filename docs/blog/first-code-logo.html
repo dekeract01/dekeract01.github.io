@@ -78,8 +78,13 @@
 
       <p>I actually wrote about this back in 2021, but since I'm moving everything over to this new
       site, I thought it was worth writing it up again. It's about the very first bit of coding I
-      ever did, which was in primary school. I was born in 1997, so this would've been around
-      Year 4, and the language was Logo.</p>
+      ever did. I remember doing this back in Year 4, in a computer class at school on Windows 98,
+      and looking back, this is where it all started: the curiosity about how a few simple commands
+      can make a computer do things.</p>
+
+      <p>So in this post, I'll go through what Logo actually is, show a few of the things I
+      recreated from memory, and there's a little turtle further down that you can play with
+      yourself, right here in your browser. No installing anything.</p>
 
       <p>If you've never come across it, Logo is the one with the turtle. You've got a little turtle
       on the screen, you give it simple commands like move forward 100 steps or turn right 90
@@ -94,6 +99,31 @@
       impressive than it has any right to:</p>
 
       <pre><code>repeat 36 [repeat 4 [forward 100 right 90] right 10]</code></pre>
+
+      <p>The best bit is that you can teach the turtle new words. Say you want a flower. First you
+      teach it what a petal is, two curves that meet at the ends, then a flower is just twelve
+      petals going round. Add a stem and a couple of leaves, and you've got this:</p>
+
+      <pre><code>to petal
+  repeat 2 [repeat 18 [forward 4 right 5] right 90]
+end
+
+to flower
+  repeat 12 [petal right 30]
+end
+
+penup forward 40 pendown
+setpencolor 10 setpensize 3
+back 150
+forward 50 petal left 90 petal right 90
+forward 100
+setpencolor "deeppink setpensize 2
+flower</code></pre>
+
+      <p>Once <code>petal</code> exists, you use it just like <code>forward</code> or
+      <code>right</code>. That's the idea of breaking a big problem into small named pieces, which
+      is basically what all programming is, and I was doing it back in Year 4 without
+      realising.</p>
 
       <p>Rather than just showing you, I've put a little turtle right here so you can have a go.
       Hit Run, change the numbers, see what happens. There are a few examples underneath too.</p>
@@ -113,6 +143,7 @@
         <div class="logo-examples">
           <span>Try:</span>
           <button type="button" data-example="square">Square</button>
+          <button type="button" data-example="spin">Spin</button>
           <button type="button" data-example="flower">Flower</button>
           <button type="button" data-example="star">Star</button>
           <button type="button" data-example="spiral">Spiral</button>
