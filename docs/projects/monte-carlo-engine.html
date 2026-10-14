@@ -41,7 +41,7 @@
           </div>
           <div>
             <dt>Last updated</dt>
-            <dd><time datetime="2026-09-19">19 September 2026</time></dd>
+            <dd><time datetime="2026-10-12">12 October 2026</time></dd>
           </div>
           <div>
             <dt>Repository</dt>
@@ -106,6 +106,12 @@
             the error rate stays below a certain tipping point. The engine throws random errors at a code,
             runs a decoder, and counts how often it fails at different code sizes. The threshold shows up
             where those failure curves cross, and I can compare it with published values.</p>
+
+      <p>I've looked into this a bit more since starting, and honestly, there are loads of Monte Carlo
+            engines in C++ out there already, mostly for finance, and probably built by people prepping
+            for quant interviews. I don't think mine is going to be drastically different from those. It's
+            still a good exercise though, and it'll help me apply the same ideas to other things. I've
+            always liked automating processes, and that's really the main idea here.</p>
 
       <p>Three different fields, one engine underneath. I haven't made the branch public just yet, but
             I'm hoping to in the next few days, so keep an eye out. I'll post results and code here as each

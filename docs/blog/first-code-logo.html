@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where It Started: Logo | Teja Ala</title>
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/page.css">
+  <style>
+    .logo { max-width: 70ch; margin: 1.75rem 0; }
+    .logo-stage { position: relative; height: 440px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); overflow: hidden; }
+    .logo-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .logo-code { display: block; box-sizing: border-box; width: 100%; margin-top: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--bar); color: var(--ink); font: 0.9rem/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; resize: vertical; }
+    .logo-controls, .logo-examples { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
+    .logo button { padding: 6px 14px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--ink); font: inherit; font-size: 0.9rem; cursor: pointer; }
+    .logo button:hover { border-color: var(--accent); }
+    .logo button[data-action="run"] { border-color: var(--accent); background: var(--accent); color: var(--paper); }
+    .logo-controls label, .logo-examples span { color: var(--ink-soft); font-size: 0.9rem; }
+    .logo-controls label { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+    .logo-controls input { accent-color: var(--accent); }
+    .logo-msg { min-height: 1.5em; margin: 10px 0 0; color: var(--ink-soft); font: 0.9rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre-line; }
+    .logo-msg.logo-error { color: #c0392b; }
+    body.theme-dark .logo-msg.logo-error { color: #ff8a80; }
+    .logo details { margin-top: 8px; font-size: 0.95rem; }
+    .logo summary { cursor: pointer; color: var(--ink-soft); }
+    .logo details ul { margin: 8px 0 0; padding-left: 1.2em; }
+    .logo details code { font-size: 0.9em; }
+    @media (max-width: 600px) {
+      .logo-stage { height: 320px; }
+      .logo-controls label { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="/">Teja Ala</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav>
+        <ul id="menu">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/research/">Research</a></li>
+          <li><a href="/blog/" aria-current="page">Blog</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">&#9790;</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="card post">
+      <h1>Where It Started: Logo</h1>
+
+      <section class="post-meta" aria-label="Post details">
+        <dl>
+          <div>
+            <dt>First published</dt>
+            <dd><time datetime="2021">2021</time></dd>
+          </div>
+          <div>
+            <dt>Last updated</dt>
+            <dd><time datetime="2026-10-14">14 October 2026</time></dd>
+          </div>
+          <!-- Optional: drop this block if the post has no repository link
+          <div>
+            <dt>Repository</dt>
+            <dd><a href="https://github.com/dekeract01">Repository link</a></dd>
+          </div>
+          -->
+        </dl>
+      </section>
+
+      <p>I actually wrote about this back in 2021, but since I'm moving everything over to this new
+      site, I thought it was worth writing it up again. It's about the very first bit of coding I
+      ever did, which was in primary school. I was born in 1997, so this would've been around
+      Year 4, and the language was Logo.</p>
+
+      <p>If you've never come across it, Logo is the one with the turtle. You've got a little turtle
+      on the screen, you give it simple commands like move forward 100 steps or turn right 90
+      degrees, and it draws a line wherever it goes. That's pretty much it, but it's surprising how
+      far you can get with just that.</p>
+
+      <p>Drawing a square, for example, is just this:</p>
+
+      <pre><code>repeat 4 [forward 100 right 90]</code></pre>
+
+      <p>And once you've got a square, you can spin it round to get something that looks far more
+      impressive than it has any right to:</p>
+
+      <pre><code>repeat 36 [repeat 4 [forward 100 right 90] right 10]</code></pre>
+
+      <p>Rather than just showing you, I've put a little turtle right here so you can have a go.
+      Hit Run, change the numbers, see what happens. There are a few examples underneath too.</p>
+
+      <div class="logo" data-logo>
+        <div class="logo-stage">
+          <canvas class="logo-paper" aria-label="Turtle drawing area"></canvas>
+          <canvas class="logo-turtle" aria-hidden="true"></canvas>
+        </div>
+        <textarea class="logo-code" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Logo code">repeat 36 [repeat 4 [forward 100 right 90] right 10]</textarea>
+        <div class="logo-controls">
+          <button type="button" data-action="run">Run</button>
+          <button type="button" data-action="stop">Stop</button>
+          <button type="button" data-action="clear">Clear</button>
+          <label>Speed <input type="range" min="1" max="10" value="5" data-speed></label>
+        </div>
+        <div class="logo-examples">
+          <span>Try:</span>
+          <button type="button" data-example="square">Square</button>
+          <button type="button" data-example="flower">Flower</button>
+          <button type="button" data-example="star">Star</button>
+          <button type="button" data-example="spiral">Spiral</button>
+          <button type="button" data-example="tree">Tree</button>
+        </div>
+        <p class="logo-msg" aria-live="polite"></p>
+        <details>
+          <summary>What can the turtle do?</summary>
+          <ul>
+            <li><code>forward 100</code>, <code>back 100</code> (or <code>fd</code>, <code>bk</code>)</li>
+            <li><code>right 90</code>, <code>left 90</code> (or <code>rt</code>, <code>lt</code>)</li>
+            <li><code>penup</code>, <code>pendown</code> (or <code>pu</code>, <code>pd</code>) to move without drawing</li>
+            <li><code>repeat 4 [ ... ]</code> to do something over and over</li>
+            <li><code>setpencolor "red</code> or <code>setpencolor 4</code>, and <code>setpensize 3</code></li>
+            <li><code>home</code>, <code>clearscreen</code> (or <code>cs</code>), <code>setxy 50 50</code>, <code>setheading 90</code></li>
+            <li><code>to square :size ... end</code> to teach it a new word, then <code>square 50</code></li>
+            <li><code>if :size &gt; 100 [stop]</code>, <code>make "n 10</code>, <code>random 360</code>, <code>repcount</code>, <code>print</code></li>
+            <li>Ctrl/Cmd + Enter runs your code</li>
+          </ul>
+        </details>
+      </div>
+
+      <p>Honestly, I don't remember anything I actually made back then, so I recreated a few things
+      as best I could, as a bit of a nostalgic trip. It was fun going back to it.</p>
+
+      <p>There's loads of turtle Logo stuff online if you fancy having a go yourself.
+      <a href="https://www.calormen.com/jslogo/">jslogo</a> runs Logo right in your browser,
+      <a href="https://turtleacademy.com/">Turtle Academy</a> has lessons and challenges, and
+      <a href="https://fmslogo.sourceforge.io/">FMSLogo</a> is a free desktop version, very close to
+      what we had at school. If you want the history, the
+      <a href="https://el.media.mit.edu/logo-foundation/">Logo Foundation</a> at MIT goes into where
+      it all came from.</p>
+
+      <p>Looking back, I really do think starting with Logo is a great way to get into coding. You
+      type a line, and straight away something happens on the screen. There's no setup, no
+      compiling, nothing to get in the way. And that's what got me. I was genuinely amazed at what
+      I could make with a few simple instructions, and that feeling has stuck with me ever
+      since.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Teja Ala</span>
+      <span><a href="https://github.com/dekeract01">GitHub</a> · <a href="/feed.xml">Feed</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    const themeButton = document.querySelector('.theme-toggle');
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme-dark');
+    if (document.body.classList.contains('theme-dark')) {
+      themeButton.setAttribute('aria-label', 'Switch to light mode');
+      themeButton.setAttribute('title', 'Switch to light mode');
+    }
+    themeButton.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('theme-dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      themeButton.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+      themeButton.setAttribute('title', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    });
+
+    const copyButton = document.querySelector('.copy-key');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const key = document.getElementById(copyButton.dataset.copyTarget).textContent;
+        await navigator.clipboard.writeText(key);
+        copyButton.textContent = 'Copied';
+        setTimeout(() => { copyButton.textContent = 'Copy'; }, 1600);
+      });
+    }
+  </script>
+  <script src="/blog/logo.js"></script>
+
+</body>
+</html>
