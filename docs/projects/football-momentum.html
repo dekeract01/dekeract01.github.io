@@ -14,6 +14,19 @@
     .post figure img { display: block; max-width: 100%; height: auto; border-radius: 6px; }
     .post figcaption { margin-top: 0.5rem; font-size: 0.9em; opacity: 0.8; }
   </style>
+  <!-- GoatCounter analytics: cookieless, no personal data. Stats at https://dekeract01.goatcounter.com -->
+  <script data-goatcounter="https://dekeract01.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    // Count clicks on outbound links and PDFs (e.g. the CV) as events.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || !window.goatcounter || !window.goatcounter.count) return;
+      var external = a.host && a.host !== location.host;
+      if (external || /\.pdf($|\?)/i.test(a.pathname)) {
+        window.goatcounter.count({ path: external ? a.href : a.pathname, title: a.textContent.trim().slice(0, 80), event: true });
+      }
+    });
+  </script>
 </head>
 <body>
 

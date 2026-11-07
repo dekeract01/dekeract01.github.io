@@ -262,6 +262,19 @@
     outline:2px solid var(--accent); outline-offset:3px; border-radius:4px;
   }
 </style>
+  <!-- GoatCounter analytics: cookieless, no personal data. Stats at https://dekeract01.goatcounter.com -->
+  <script data-goatcounter="https://dekeract01.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    // Count clicks on outbound links and PDFs (e.g. the CV) as events.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || !window.goatcounter || !window.goatcounter.count) return;
+      var external = a.host && a.host !== location.host;
+      if (external || /\.pdf($|\?)/i.test(a.pathname)) {
+        window.goatcounter.count({ path: external ? a.href : a.pathname, title: a.textContent.trim().slice(0, 80), event: true });
+      }
+    });
+  </script>
 </head>
 <body>
 
